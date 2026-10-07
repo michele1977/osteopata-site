@@ -4,7 +4,8 @@ import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import SectionTitle from "@/components/ui/SectionTitle";
 import Card from "@/components/ui/Card";
-import { CONTACT_INFO } from "@/lib/constants";
+import { CONTACT_INFO, MIODOTTORE_URL } from "@/lib/constants";
+import { RECENSIONI } from "@/lib/recensioni";
 
 export const metadata: Metadata = {
   title: "Roberto Trupiano - Osteopata a Napoli e Pozzuoli",
@@ -75,49 +76,6 @@ const vantaggi = [
       "Due studi facilmente raggiungibili per offrirti flessibilit\u00e0 negli appuntamenti e comodit\u00e0 negli spostamenti.",
   },
 ];
-
-
-
-const recensioni = [
-  {
-    nome: "Marco R.",
-    testo:
-      "Dopo anni di mal di schiena e diversi specialisti, finalmente qualcuno ha capito la causa del mio problema. Già dalla prima seduta ho sentito la differenza.",
-    stelle: 5,
-    problema: "Mal di schiena",
-  },
-  {
-    nome: "Anna M.",
-    testo:
-      "Soffrivo di cervicale cronica e cefalee continue. Roberto mi ha seguita con un percorso personalizzato: dopo quattro sedute la frequenza dei mal di testa si è dimezzata.",
-    stelle: 5,
-    problema: "Cervicale e cefalea",
-  },
-  {
-    nome: "Laura S.",
-    testo:
-      "Ambiente accogliente, spiegazioni chiare e risultati concreti. Il Dott. Trupiano mi ha fatto capire quanto fosse importante lavorare sulla postura e non solo sul dolore.",
-    stelle: 5,
-    problema: "Postura",
-  },
-  {
-    nome: "Giuseppe D.",
-    testo:
-      "Professionale, competente e soprattutto paziente. Mi ha spiegato ogni passaggio e in pochi mesi ho risolto un problema posturale che mi portavo dietro da anni.",
-    stelle: 5,
-    problema: "Squilibrio posturale",
-  },
-];
-
-// --- Stella SVG riusabile ---
-
-function StarIcon() {
-  return (
-    <svg className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-    </svg>
-  );
-}
 
 // --- Componente pagina ---
 
@@ -211,7 +169,7 @@ export default function HomePage() {
         <Container>
           <SectionTitle
             title="Perch&eacute; scegliere il mio studio"
-            subtitle="Il mio obiettivo \u00e8 aiutarti a comprendere la causa del problema e costruire un percorso efficace e mirato."
+            subtitle="Il mio obiettivo è aiutarti a comprendere la causa del problema e costruire un percorso efficace e mirato."
           />
           <div className="mt-12 grid gap-6 sm:grid-cols-2">
             {vantaggi.map((v) => (
@@ -266,32 +224,35 @@ export default function HomePage() {
         <Container>
           <SectionTitle
             title="Cosa dicono i pazienti"
-            subtitle="L'esperienza di chi ha scelto di affidarsi a me."
+            subtitle="Alcune delle recensioni lasciate dai pazienti su MioDottore."
           />
           <div className="mt-12 grid gap-6 sm:grid-cols-2">
-            {recensioni.map((r) => (
+            {RECENSIONI.map((r) => (
               <Card key={r.nome} className="flex flex-col justify-between">
-                <div>
-                  <div className="flex gap-0.5 text-amber-400" aria-label={`${r.stelle} stelle su 5`}>
-                    {Array.from({ length: r.stelle }).map((_, i) => (
-                      <StarIcon key={i} />
-                    ))}
-                  </div>
-                  <p className="mt-3 text-sm leading-relaxed text-zinc-700">
-                    &ldquo;{r.testo}&rdquo;
-                  </p>
-                </div>
+                <p className="text-sm leading-relaxed text-zinc-700">
+                  &ldquo;{r.testo}&rdquo;
+                </p>
                 <div className="mt-4 border-t border-zinc-100 pt-3">
                   <p className="text-sm font-semibold text-zinc-900">{r.nome}</p>
-                  <p className="text-xs text-zinc-500">{r.problema}</p>
+                  <p className="text-xs text-zinc-500">
+                    {r.visita} &middot; {r.data}
+                  </p>
                 </div>
               </Card>
             ))}
           </div>
-          <div className="mt-10 text-center">
+          <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Button href="/recensioni" variant="secondary">
               Leggi tutte le recensioni
             </Button>
+            <a
+              href={MIODOTTORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-semibold text-teal-700 underline underline-offset-2 hover:text-teal-800"
+            >
+              Vedi il profilo su MioDottore
+            </a>
           </div>
         </Container>
       </section>

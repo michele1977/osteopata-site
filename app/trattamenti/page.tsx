@@ -107,6 +107,70 @@ const problemi = [
     soluzione:
       "Lavoriamo sulle tensioni che generano il mal di testa per ridurne la frequenza e l\u2019intensit\u00e0 nel tempo.",
   },
+  {
+    icon: (
+      <svg className="h-7 w-7 text-teal-600" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+      </svg>
+    ),
+    titolo: "Lesioni sportive",
+    intro: "Distorsioni, contratture e sovraccarichi che non passano o tendono a ripresentarsi.",
+    punti: [
+      "Dolore che torna ogni volta che riprendi l\u2019allenamento",
+      "Distorsioni di caviglia o ginocchio mai del tutto recuperate",
+      "Calo di mobilit\u00e0 o di prestazione dopo un infortunio",
+    ],
+    soluzione:
+      "Valutiamo come il corpo ha compensato l\u2019infortunio e lavoriamo per recuperare il movimento e ridurre il rischio di ricadute.",
+  },
+  {
+    icon: (
+      <svg className="h-7 w-7 text-teal-600" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59" />
+      </svg>
+    ),
+    titolo: "Tunnel carpale",
+    intro: "Formicolio, intorpidimento o dolore alla mano e alle dita, spesso di notte.",
+    punti: [
+      "Formicolio a pollice, indice e medio",
+      "Mano che si addormenta durante la notte",
+      "Fatica a stringere gli oggetti o a usare il mouse",
+    ],
+    soluzione:
+      "Lavoriamo su polso, gomito, spalla e collo per ridurre le tensioni lungo il percorso del nervo, in accordo con le indicazioni del tuo medico.",
+  },
+  {
+    icon: (
+      <svg className="h-7 w-7 text-teal-600" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
+      </svg>
+    ),
+    titolo: "Nevralgie",
+    intro: "Dolori lungo il decorso di un nervo, come la nevralgia del trigemino o intercostale.",
+    punti: [
+      "Dolore acuto, a scossa o bruciante",
+      "Fastidio al viso, alla mandibola o lungo le costole",
+      "Episodi scatenati da movimenti o tensioni",
+    ],
+    soluzione:
+      "Cerchiamo le tensioni di cranio, collo e mandibola che possono contribuire al disturbo, come supporto al percorso indicato dal medico.",
+  },
+  {
+    icon: (
+      <svg className="h-7 w-7 text-teal-600" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+      </svg>
+    ),
+    titolo: "Disturbi digestivi funzionali",
+    intro: "Acidit\u00e0, reflusso o colon irritabile, spesso legati anche a postura e stress.",
+    punti: [
+      "Bruciore o reflusso dopo i pasti",
+      "Gonfiore e alternanza di stitichezza e diarrea",
+      "Tensione addominale che si riflette su schiena e respiro",
+    ],
+    soluzione:
+      "Con tecniche viscerali dolci lavoriamo sul diaframma e sull\u2019addome, come supporto e mai in sostituzione del parere del gastroenterologo.",
+  },
 ];
 
 export default function TrattamentiPage() {
@@ -196,8 +260,46 @@ export default function TrattamentiPage() {
         </Container>
       </section>
 
-      {/* Teaser prima visita */}
+      {/* Osteopatia e odontoiatria */}
       <section className="py-16 sm:py-24">
+        <Container className="max-w-3xl">
+          <h2 className="text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">
+            Osteopatia e odontoiatria
+          </h2>
+          <p className="mt-5 text-base leading-relaxed text-zinc-500">
+            Mi occupo in modo specifico dei disturbi
+            cranio-cervico-mandibolari: il rapporto tra bocca, mandibola,
+            collo e postura. Un&rsquo;occlusione non equilibrata pu&ograve;
+            contribuire a cefalee, dolori cervicali, mal di schiena e
+            tensioni che sembrano non avere una causa chiara.
+          </p>
+          <p className="mt-4 text-base leading-relaxed text-zinc-500">
+            Durante la valutazione verifico con test specifici se la bocca
+            pu&ograve; essere coinvolta nel tuo problema. Quando serve
+            utilizzo anche tecniche osteopatiche intraorali; quando
+            l&rsquo;intervento spetta al dentista, ti indirizzo verso un
+            odontoiatra con cui collaboro.
+          </p>
+          <ul className="mt-6 space-y-2">
+            {[
+              "Bruxismo e serramento dei denti",
+              "Dolore o click all\u2019articolazione della mandibola",
+              "Cefalee e cervicalgie che non rispondono ad altri trattamenti",
+              "Supporto durante trattamenti ortodontici o con bite",
+            ].map((punto) => (
+              <li key={punto} className="flex items-start gap-2 text-sm text-zinc-600">
+                <svg className="mt-0.5 h-4 w-4 shrink-0 text-teal-500" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                </svg>
+                {punto}
+              </li>
+            ))}
+          </ul>
+        </Container>
+      </section>
+
+      {/* Teaser prima visita */}
+      <section className="bg-zinc-50 py-16 sm:py-24">
         <Container className="max-w-2xl text-center">
           <h2 className="text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl">
             Non sai cosa aspettarti?
@@ -215,7 +317,7 @@ export default function TrattamentiPage() {
       </section>
 
       {/* Inline CTA */}
-      <section className="bg-zinc-50 py-16 sm:py-20">
+      <section className="py-16 sm:py-20">
         <Container className="max-w-2xl text-center">
           <h2 className="text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl">
             Ti riconosci in uno di questi sintomi?

@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
-import { CONTACT_INFO } from "@/lib/constants";
+import { CONTACT_INFO, CURRICULUM_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Chi sono \u2013 Osteopata a Napoli e Pozzuoli | Roberto Trupiano",
@@ -140,13 +140,28 @@ export default function ChiSonoPage() {
               </div>
               <h3 className="text-xl font-bold text-zinc-900">Formazione</h3>
               <p className="mt-3 text-base leading-relaxed text-zinc-500">
-                Percorso di studi quinquennale in osteopatia, con
-                approfondimenti in ambito posturale e kinesiologico.
+                Diploma in Osteopatia (D.O.) presso ATSAI &ndash; Still
+                Academy nel 2013, dopo studi di anatomia, fisiologia e
+                biomeccanica all&rsquo;I.S.E.F.
               </p>
               <p className="mt-3 text-base leading-relaxed text-zinc-500">
-                Formazione continua nelle tecniche manuali avanzate
-                e nella gestione del dolore cronico.
+                Oltre 100 corsi post-graduate in ambito pediatrico,
+                viscerale, neurale, somato-emozionale, kinesiologia
+                applicata, biodinamica cranio-sacrale e medicina
+                nutrizionale. Specializzato nei disturbi
+                cranio-cervico-mandibolari, membro R.O.I.
               </p>
+              <a
+                href={CURRICULUM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-teal-700 hover:text-teal-800"
+              >
+                Scarica il curriculum (PDF)
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                </svg>
+              </a>
             </div>
 
             {/* Esperienza */}

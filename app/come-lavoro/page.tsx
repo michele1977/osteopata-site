@@ -32,6 +32,24 @@ const principi = [
   },
 ];
 
+const ambiti = [
+  {
+    titolo: "Strutturale",
+    descrizione:
+      "Ossa, articolazioni, muscoli e fasce. Una vecchia distorsione, una cicatrice o un\u2019occlusione non equilibrata possono creare compensi che si fanno sentire lontano dal punto di partenza.",
+  },
+  {
+    titolo: "Viscerale e metabolico",
+    descrizione:
+      "Organi interni e colonna sono collegati da legamenti, fasce e nervi. Una tensione addominale pu\u00f2 riflettersi sulla schiena, e le abitudini alimentari influiscono sul livello di infiammazione generale.",
+  },
+  {
+    titolo: "Emozionale",
+    descrizione:
+      "Stress e periodi difficili si traducono spesso in tensioni muscolari, respiro corto e posture chiuse. Ne tengo conto, senza sostituirmi allo psicologo o al medico.",
+  },
+];
+
 export default function ComeLavoroPage() {
   return (
     <>
@@ -73,8 +91,32 @@ export default function ComeLavoroPage() {
         </Container>
       </section>
 
-      {/* In pratica */}
+      {/* Triangolo della salute */}
       <section className="py-16 sm:py-24">
+        <Container className="max-w-3xl">
+          <SectionTitle
+            title="Il triangolo della salute"
+            subtitle="Quando valuto un problema considero tre aspetti che si influenzano a vicenda."
+            centered={false}
+          />
+          <div className="mt-12 grid gap-6 sm:grid-cols-3">
+            {ambiti.map((a) => (
+              <div
+                key={a.titolo}
+                className="rounded-xl border border-zinc-100 bg-white p-6 shadow-sm"
+              >
+                <h3 className="font-semibold text-zinc-900">{a.titolo}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-zinc-600">
+                  {a.descrizione}
+                </p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* In pratica */}
+      <section className="bg-zinc-50 py-16 sm:py-24">
         <Container className="max-w-3xl">
           <SectionTitle
             title="In pratica, cosa succede?"

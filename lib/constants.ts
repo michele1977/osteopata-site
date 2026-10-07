@@ -19,3 +19,15 @@ export const CONTACT_INFO = {
   addressPozzuoli: "Via Montenuovo Licola Patria 138, Pozzuoli (NA)",
   whatsapp: "https://wa.me/393389837411",
 } as const;
+
+export const SOCIAL_LINKS = {
+  instagram: "https://www.instagram.com/dott_robertotrupiano_osteopata/",
+  facebook: "https://www.facebook.com/osteopatarobertotrupiano",
+} as const;
+
+export const MIODOTTORE_URL =
+  "https://www.miodottore.it/roberto-trupiano/osteopata/napoli#profile-reviews";
+
+// TODO: copiare il PDF in public/ prima di dismettere il vecchio dominio.
+export const CURRICULUM_URL =
+  "https://osteopatatrupiano.it/wp-content/uploads/2025/05/Curriculum.pdf";
