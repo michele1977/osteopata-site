@@ -6,7 +6,7 @@ import { MIODOTTORE_URL } from "@/lib/constants";
 import { RECENSIONI, NUMERO_RECENSIONI_MIODOTTORE } from "@/lib/recensioni";
 
 export const metadata: Metadata = {
-  title: "Recensioni | Dott. Trupiano Osteopata",
+  title: "Recensioni",
   description:
     "Leggi le recensioni dei pazienti del Dott. Trupiano, osteopata a Napoli e Pozzuoli.",
 };

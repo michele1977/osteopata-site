@@ -4,7 +4,7 @@ import SectionTitle from "@/components/ui/SectionTitle";
 import Button from "@/components/ui/Button";
 
 export const metadata: Metadata = {
-  title: "Come lavoro | Dott. Trupiano Osteopata",
+  title: "Come lavoro",
   description:
     "Il mio approccio osteopatico: attenzione alla causa del problema, visione globale della persona e percorsi personalizzati. Studio a Napoli e Pozzuoli.",
 };

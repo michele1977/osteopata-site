@@ -5,7 +5,7 @@ import { CONTACT_INFO } from "@/lib/constants";
 import ContactForm from "./ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contatti | Dott. Trupiano Osteopata",
+  title: "Contatti",
   description:
     "Contatta lo studio del Dott. Trupiano per prenotare una visita osteopatica a Napoli o Pozzuoli.",
 };
