@@ -1,9 +1,8 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Image from "next/image";
-import Container from "@/components/ui/Container";
-import Button from "@/components/ui/Button";
-import SectionTitle from "@/components/ui/SectionTitle";
-import Card from "@/components/ui/Card";
+import Link from "next/link";
+import Triangolo from "@/components/home/Triangolo";
+import Disturbi from "@/components/home/Disturbi";
 import { CONTACT_INFO, MIODOTTORE_URL } from "@/lib/constants";
 import { RECENSIONI } from "@/lib/recensioni";
 
@@ -13,322 +12,275 @@ export const metadata: Metadata = {
     "Roberto Trupiano, osteopata a Napoli e Pozzuoli. Trattamenti personalizzati per cervicale, mal di schiena, postura e dolori articolari, con approccio orientato alla causa del problema.",
 };
 
-// --- Dati statici ---
+const tel = `tel:${CONTACT_INFO.phone.replace(/\s/g, "")}`;
+const phoneShort = CONTACT_INFO.phone.replace(/^\+39\s*/, "");
 
-const trustPoints = [
-  "Sedi a Napoli e Pozzuoli",
-  "Approccio personalizzato",
-  "Visite solo su appuntamento",
+const training = [
+  ["2013", "Diploma D.O. — A.T. Still Academy (ATSAI), 6 anni"],
+  ["—", "I.S.E.F. — anatomia, fisiologia, biomeccanica"],
+  ["II liv.", "Master in Medicina Nutrizionale e Funzionale — Phytoitalia"],
+  ["3 anni", "Biodinamica Cranio-Sacrale Integrale — Istituto Fenice"],
+  ["ATSAI", "Pediatria · ATM e stomatognatico · Somato-emozionale"],
+  ["Barral", "Tecniche di ascolto e catene lesionali"],
+  ["C.I.O.", "Regolazione del sistema nervoso e cefalee"],
+  ["+100", "Corsi post-graduate in Italia e all'estero"],
 ];
 
-const problemi = [
-  {
-    titolo: "Mal di schiena lombare e dorsale",
-    descrizione:
-      "Dolore, blocchi o rigidit\u00e0 nella zona lombare o dorsale che limitano i movimenti quotidiani. Individuiamo la causa per un sollievo duraturo.",
-  },
-  {
-    titolo: "Dolore cervicale e tensioni al collo",
-    descrizione:
-      "Collo rigido, difficolt\u00e0 a girare la testa, dolore che si estende fino alle spalle. Spesso poche sedute fanno una differenza concreta.",
-  },
-  {
-    titolo: "Problemi posturali",
-    descrizione:
-      "Posture scorrette che generano compensi, dolore cronico e affaticamento. Ti aiuto a riconoscere gli squilibri e a ripristinare l'equilibrio.",
-  },
-  {
-    titolo: "Sciatalgia e dolore irradiato alla gamba",
-    descrizione:
-      "Dolore che dalla schiena scende lungo la gamba, rendendo difficile camminare o stare seduti. Lavoriamo per decomprimere e liberare il nervo.",
-  },
-  {
-    titolo: "Dolori articolari",
-    descrizione:
-      "Spalle, ginocchia, anche: quando un'articolazione fa male il corpo compensa e il disagio si estende. Interveniamo sulla meccanica articolare.",
-  },
-  {
-    titolo: "Cefalee ed emicranie",
-    descrizione:
-      "Mal di testa frequenti, spesso legati a tensioni cervicali o mandibolari. Il trattamento manuale mirato ne riduce intensit\u00e0 e frequenza.",
-  },
+const studi = [
+  { citta: "Napoli", indirizzo: CONTACT_INFO.address },
+  { citta: "Pozzuoli", indirizzo: CONTACT_INFO.addressPozzuoli },
 ];
 
-const vantaggi = [
-  {
-    titolo: "Approccio personalizzato",
-    descrizione:
-      "Ogni paziente ha una storia diversa. Costruisco un percorso su misura basato sulle tue esigenze, senza protocolli generici.",
-  },
-  {
-    titolo: "Attenzione alla causa, non solo al sintomo",
-    descrizione:
-      "Il dolore spesso nasce lontano da dove lo senti. Il mio obiettivo \u00e8 risalire all'origine per offrirti risultati stabili nel tempo.",
-  },
-  {
-    titolo: "Esperienza e approccio professionale",
-    descrizione:
-      "Formazione continua, aggiornamento costante e tecniche manuali supportate dalle evidenze scientifiche pi\u00f9 recenti.",
-  },
-  {
-    titolo: "Sedi comode tra Napoli e Pozzuoli",
-    descrizione:
-      "Due studi facilmente raggiungibili per offrirti flessibilit\u00e0 negli appuntamenti e comodit\u00e0 negli spostamenti.",
-  },
-];
-
-// --- Componente pagina ---
+function Label({ n, children }: { n: string; children: React.ReactNode }) {
+  return (
+    <div className="flex items-center gap-3 text-[11.5px] font-medium uppercase tracking-[0.18em] text-stone">
+      <span className="text-tufo">{n}</span>
+      <span className="h-px w-8 bg-ink/30" />
+      {children}
+    </div>
+  );
+}
 
 export default function HomePage() {
   return (
     <>
-      {/* Hero */}
-      <section className="bg-gradient-to-b from-teal-50 to-white py-14 sm:py-20 lg:py-28">
-        <Container>
-          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-20">
-            {/* Testo */}
-            <div className="max-w-xl">
-              <h1 className="text-4xl font-bold leading-tight tracking-tight text-zinc-900 sm:text-5xl">
-                Roberto Trupiano, osteopata a Napoli e Pozzuoli
-              </h1>
-              <p className="mt-5 text-lg leading-relaxed text-zinc-600 sm:mt-6">
-                Trattamenti osteopatici personalizzati per mal di schiena,
-                cervicale, postura e dolori articolari, pensati per aiutarti a
-                comprendere e trattare la causa del problema.
-              </p>
-              <p className="mt-3 text-sm font-medium text-teal-700">
-                Per adulti, sportivi e persone con lavoro sedentario.
-              </p>
-              <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:gap-4">
-                <Button href="/contatti" className="w-full px-8 py-3.5 text-base sm:w-auto">
-                  Contatta lo studio
-                </Button>
-                <Button href="/prima-visita" variant="secondary" className="w-full sm:w-auto">
-                  Scopri la prima visita
-                </Button>
-              </div>
-              {/* Trust points */}
-              <ul className="mt-8 flex flex-col gap-2.5 border-t border-zinc-200 pt-6 sm:mt-10 sm:pt-8">
-                {trustPoints.map((label) => (
-                  <li key={label} className="flex items-center gap-2.5 text-zinc-600">
-                    <svg className="h-4 w-4 shrink-0 text-teal-600" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clipRule="evenodd" />
-                    </svg>
-                    <span className="text-sm leading-snug">{label}</span>
-                  </li>
-                ))}
-              </ul>
+      {/* HERO */}
+      <section className="relative overflow-hidden">
+        <div
+          className="pointer-events-none absolute inset-0 opacity-70"
+          style={{
+            background:
+              "radial-gradient(60% 60% at 85% 20%, #c9d6cf 0%, transparent 60%), radial-gradient(40% 50% at 10% 90%, #e8c9b6 0%, transparent 60%)",
+          }}
+        />
+        <div className="relative mx-auto grid max-w-[1320px] gap-12 px-6 pb-20 pt-16 lg:grid-cols-12 lg:items-center lg:px-10 lg:pt-20">
+          <div className="lg:col-span-7">
+            <div className="flex items-center gap-3 text-[11.5px] font-medium uppercase tracking-[0.18em] text-stone">
+              <span className="h-px w-8 bg-tufo" />
+              Osteopata D.O. · Napoli &amp; Pozzuoli
             </div>
-            {/* Immagine */}
-            <div className="relative mx-auto aspect-[2/3] w-full max-w-xs overflow-hidden rounded-2xl shadow-lg sm:max-w-sm lg:mx-0 lg:ml-auto">
+            <h1 className="mt-6 font-display text-[clamp(2.75rem,9vw,4.5rem)] font-light leading-[0.98] tracking-[-0.03em] lg:text-[clamp(2.75rem,5.2vw,5.25rem)]">
+              Perché limitarsi
+              <br />
+              al sintomo, quando
+              <br />
+              <em className="text-tufo">
+                possiamo <br className="hidden sm:block" />
+                trattare la causa?
+              </em>
+            </h1>
+            <p className="mt-8 max-w-md text-lg leading-relaxed text-ink/85">
+              Con le mani, senza farmaci, risalendo all&apos;origine del disturbo. Per pazienti di
+              ogni età, anche in gravidanza, con un&apos;attenzione particolare a mandibola,
+              cervicale e postura.
+            </p>
+            <dl className="mt-8 grid max-w-lg grid-cols-2 border-t border-ink/15 pt-3">
+              <div>
+                <dt className="text-[11.5px] font-medium uppercase tracking-[0.18em] text-stone">Telefono</dt>
+                <dd className="mt-0.5">
+                  <a
+                    href={tel}
+                    className="font-display text-xl underline decoration-transparent underline-offset-4 transition hover:text-tufo hover:decoration-tufo"
+                  >
+                    {phoneShort}
+                  </a>
+                </dd>
+              </div>
+              <div className="border-l border-ink/15 pl-6">
+                <dt className="text-[11.5px] font-medium uppercase tracking-[0.18em] text-stone">Studi</dt>
+                <dd className="mt-0.5">
+                  <a
+                    href="#contatti"
+                    className="font-display text-xl underline decoration-transparent underline-offset-4 transition hover:text-tufo hover:decoration-tufo"
+                  >
+                    Napoli · Pozzuoli
+                  </a>
+                </dd>
+              </div>
+            </dl>
+          </div>
+          <div className="relative lg:col-span-5">
+            <figure className="overflow-hidden rounded-[1.75rem] bg-sea">
+              <div className="relative aspect-[4/5] overflow-hidden">
+                <Image
+                  src="/trupiano-ritratto-hd.png"
+                  alt="Ritratto del Dott. Roberto Trupiano, osteopata D.O."
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 40vw, 100vw"
+                  className="scale-[1.03] object-cover object-[100%_30%]"
+                />
+              </div>
+              <figcaption className="flex items-center justify-between px-5 py-3 text-[11px] font-medium uppercase tracking-[0.18em] text-paper/70">
+                <span>Dott. Roberto Trupiano</span>
+                <span>Osteopata D.O. · R.O.I.</span>
+              </figcaption>
+            </figure>
+            <div className="absolute -left-6 bottom-20 rounded-2xl bg-paper p-5 shadow-[0_20px_50px_-20px_rgba(19,32,30,0.35)]">
+              <div className="font-display text-4xl">13</div>
+              <div className="text-[11px] font-medium uppercase tracking-widest text-stone">anni di pratica clinica</div>
+            </div>
+          </div>
+        </div>
+        <div className="border-y border-line">
+          <div className="mx-auto grid max-w-[1320px] grid-cols-2 divide-x divide-line px-6 md:grid-cols-4 lg:px-10">
+            {[
+              ["D.O.", "A.T. Still Academy"],
+              ["+100", "corsi post-graduate"],
+              ["R.O.I.", "Registro Osteopati"],
+              ["2", "studi in Campania"],
+            ].map(([a, b]) => (
+              <div key={b} className="px-4 py-6 first:pl-0">
+                <div className="font-display text-2xl">{a}</div>
+                <div className="text-[11.5px] font-medium uppercase tracking-wider text-stone">{b}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <Triangolo />
+
+      <Disturbi />
+
+      {/* CHI SONO */}
+      <section id="chi" className="mx-auto max-w-[1320px] px-6 py-28 lg:px-10">
+        <div className="grid gap-16 lg:grid-cols-12">
+          <div className="lg:col-span-4">
+            <div className="relative aspect-[3/4] overflow-hidden rounded-3xl bg-[#dfe6e1]">
               <Image
-                src="/dott-trupiano.png"
-                alt="Dott. Roberto Trupiano, osteopata"
+                src="/trupiano-studio.webp"
+                alt="Il Dott. Roberto Trupiano durante un trattamento osteopatico della schiena"
                 fill
-                sizes="(max-width: 640px) 70vw, (max-width: 1024px) 50vw, 384px"
-                className="object-cover"
-                priority
+                sizes="(min-width: 1024px) 30vw, 100vw"
+                className="object-cover object-[62%_top] pt-4"
               />
             </div>
           </div>
-        </Container>
+          <div className="lg:col-span-8">
+            <Label n="03">Chi sono</Label>
+            <p className="mt-6 font-display text-3xl font-light leading-snug md:text-4xl">
+              Dott. Roberto Trupiano, osteopata D.O. Dalle basi biomeccaniche dell&apos;I.S.E.F. a
+              sei anni di formazione all&apos;A.T. Still Academy, fino a{" "}
+              <em className="text-tufo">oltre cento corsi</em> tra cranio-sacrale, viscerale e
+              nutrizione funzionale.
+            </p>
+            <ul className="mt-12 grid sm:grid-cols-2 sm:gap-x-10">
+              {training.map(([k, v]) => (
+                <li key={v} className="flex gap-5 border-t border-line py-4">
+                  <span className="w-14 shrink-0 text-xs font-medium text-tufo">{k}</span>
+                  <span className="text-[15px] text-ink/85">{v}</span>
+                </li>
+              ))}
+            </ul>
+            <Link
+              href="/chi-sono"
+              className="mt-8 inline-block text-xs font-medium uppercase tracking-widest text-tufo hover:underline"
+            >
+              Il percorso completo →
+            </Link>
+          </div>
+        </div>
       </section>
 
-      {/* 1 - Problemi trattati */}
-      <section className="py-16 sm:py-24">
-        <Container>
-          <SectionTitle
-            title="Disturbi che tratto pi&ugrave; spesso"
-            subtitle="Se ti riconosci in uno di questi disturbi, l'osteopatia pu&ograve; aiutarti a individuare e trattare la causa del problema."
-          />
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {problemi.map((p) => (
-              <Card key={p.titolo} className="transition-shadow duration-200 hover:shadow-md">
-                <h3 className="text-base font-semibold leading-snug text-zinc-900">
-                  {p.titolo}
-                </h3>
-                <p className="mt-2.5 text-sm leading-relaxed text-zinc-600">
-                  {p.descrizione}
-                </p>
-              </Card>
-            ))}
+      {/* M.E.S.O. ACADEMY */}
+      <section id="eventi" className="bg-ink py-28 text-paper">
+        <div className="mx-auto grid max-w-[1320px] gap-10 px-6 lg:grid-cols-12 lg:items-end lg:px-10">
+          <div className="lg:col-span-8">
+            <div className="flex items-center gap-3 text-[11.5px] font-medium uppercase tracking-[0.18em] text-paper/75">
+              <span className="text-tufo">04</span>
+              <span className="h-px w-8 bg-paper/30" />
+              M.E.S.O. Academy
+            </div>
+            <h2 className="mt-6 font-display text-5xl font-light tracking-tight md:text-6xl">
+              Formazione &amp; incontri
+            </h2>
+            <p className="mt-6 max-w-xl leading-relaxed text-paper/75">
+              Corsi e seminari per professionisti della salute, tra postura, kinesiologia applicata
+              e approccio metabolico.
+            </p>
           </div>
-          <p className="mt-10 text-center text-sm text-zinc-500">
-            Non trovi il tuo problema? Contatta lo studio per un confronto.
-          </p>
-          <div className="mt-4 text-center">
-            <Button href="/contatti" variant="secondary">
-              Contatta lo studio
-            </Button>
+          <div className="lg:col-span-4 lg:text-right">
+            <Link
+              href="/meso-academy"
+              className="inline-block rounded-full bg-paper px-7 py-4 text-ink transition hover:bg-tufo hover:text-paper"
+            >
+              Scopri l&apos;Academy →
+            </Link>
           </div>
-        </Container>
+        </div>
       </section>
 
-      {/* 2 - Perche scegliere il mio studio */}
-      <section className="bg-zinc-50 py-16 sm:py-24">
-        <Container>
-          <SectionTitle
-            title="Perch&eacute; scegliere il mio studio"
-            subtitle="Il mio obiettivo è aiutarti a comprendere la causa del problema e costruire un percorso efficace e mirato."
-          />
-          <div className="mt-12 grid gap-6 sm:grid-cols-2">
-            {vantaggi.map((v) => (
-              <div
-                key={v.titolo}
-                className="rounded-xl bg-white p-6 shadow-sm ring-1 ring-zinc-100 transition-shadow duration-200 hover:shadow-md"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-teal-100 text-teal-700">
-                    <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold leading-snug text-zinc-900">{v.titolo}</h3>
-                    <p className="mt-1.5 text-sm leading-relaxed text-zinc-600">
-                      {v.descrizione}
-                    </p>
-                  </div>
-                </div>
+      {/* RECENSIONI */}
+      <section className="mx-auto max-w-[1320px] px-6 py-28 lg:px-10">
+        <Label n="05">Dicono di me</Label>
+        <div className="mt-10 grid gap-10 md:grid-cols-3">
+          {RECENSIONI.slice(0, 3).map((r) => (
+            <figure key={r.nome + r.data} className="border-t border-line pt-6">
+              <blockquote className="font-display text-2xl font-light leading-snug md:text-3xl">
+                “{r.testo}”
+              </blockquote>
+              <figcaption className="mt-5 text-[11.5px] font-medium uppercase tracking-[0.18em] text-stone">
+                {r.nome} · {r.data}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+        <div className="mt-12 flex flex-wrap gap-8">
+          <Link href="/recensioni" className="text-xs font-medium uppercase tracking-widest text-tufo hover:underline">
+            Tutte le recensioni →
+          </Link>
+          <a
+            href={MIODOTTORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs font-medium uppercase tracking-widest text-stone hover:text-tufo"
+          >
+            Su MioDottore ↗
+          </a>
+        </div>
+      </section>
+
+      {/* CONTATTI */}
+      <section id="contatti" className="px-4 pb-4 lg:px-6 lg:pb-6">
+        <div className="relative overflow-hidden rounded-[2.5rem] bg-tufo px-6 py-20 text-paper lg:px-16">
+          <div className="grid gap-14 lg:grid-cols-12">
+            <div className="lg:col-span-6">
+              <div className="text-[11.5px] font-medium uppercase tracking-[0.18em] text-paper/70">06 — Contatti</div>
+              <h2 className="mt-6 font-display text-6xl font-light leading-[0.95] tracking-tight md:text-7xl">
+                Parliamone
+                <br />
+                <em>al telefono.</em>
+              </h2>
+              <div className="mt-10 flex flex-wrap gap-4">
+                <a href={tel} className="rounded-full bg-paper px-7 py-4 text-ink transition hover:bg-ink hover:text-paper">
+                  {CONTACT_INFO.phone}
+                </a>
               </div>
-            ))}
+              <a href={`mailto:${CONTACT_INFO.email}`} className="mt-6 block text-paper/80 hover:text-paper">
+                {CONTACT_INFO.email}
+              </a>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2 lg:col-span-6">
+              {studi.map(({ citta, indirizzo }) => (
+                <Link
+                  key={citta}
+                  href="/contatti"
+                  className="group flex flex-col justify-between rounded-3xl bg-paper/10 p-7 transition hover:bg-paper/20"
+                >
+                  <span className="text-[11.5px] font-medium uppercase tracking-widest text-paper/70">Studio</span>
+                  <span className="mt-20">
+                    <span className="block font-display text-4xl">{citta}</span>
+                    <span className="mt-1 block text-paper/80">{indirizzo}</span>
+                    <span className="mt-4 block text-sm opacity-60 transition group-hover:opacity-100">
+                      Mappa e indicazioni →
+                    </span>
+                  </span>
+                </Link>
+              ))}
+            </div>
           </div>
-          <p className="mt-10 text-center text-sm text-zinc-500">
-            Hai un dubbio o vuoi capire se posso aiutarti?
-          </p>
-          <div className="mt-4 text-center">
-            <Button href="/contatti" variant="secondary">
-              Contatta lo studio
-            </Button>
-          </div>
-        </Container>
-      </section>
-
-      {/* 3 - Teaser prima visita */}
-      <section className="py-16 sm:py-24">
-        <Container className="max-w-3xl text-center">
-          <SectionTitle
-            title="La prima visita"
-            subtitle="Ascolto, valutazione, trattamento e indicazioni personalizzate: un incontro di 45-60 minuti per capire il tuo problema e iniziare a risolverlo."
-          />
-          <div className="mt-8">
-            <Button href="/prima-visita" variant="secondary">
-              Scopri come funziona
-            </Button>
-          </div>
-        </Container>
-      </section>
-
-      {/* 4 - Recensioni */}
-      <section className="bg-zinc-50 py-16 sm:py-24">
-        <Container>
-          <SectionTitle
-            title="Cosa dicono i pazienti"
-            subtitle="Alcune delle recensioni lasciate dai pazienti su MioDottore."
-          />
-          <div className="mt-12 grid gap-6 sm:grid-cols-2">
-            {RECENSIONI.map((r) => (
-              <Card key={r.nome} className="flex flex-col justify-between">
-                <p className="text-sm leading-relaxed text-zinc-700">
-                  &ldquo;{r.testo}&rdquo;
-                </p>
-                <div className="mt-4 border-t border-zinc-100 pt-3">
-                  <p className="text-sm font-semibold text-zinc-900">{r.nome}</p>
-                  <p className="text-xs text-zinc-500">
-                    {r.visita} &middot; {r.data}
-                  </p>
-                </div>
-              </Card>
-            ))}
-          </div>
-          <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Button href="/recensioni" variant="secondary">
-              Leggi tutte le recensioni
-            </Button>
-            <a
-              href={MIODOTTORE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm font-semibold text-teal-700 underline underline-offset-2 hover:text-teal-800"
-            >
-              Vedi il profilo su MioDottore
-            </a>
-          </div>
-        </Container>
-      </section>
-
-      {/* 5 - Dove ricevo */}
-      <section className="py-16 sm:py-24">
-        <Container>
-          <SectionTitle
-            title="Dove ricevo"
-            subtitle="Due sedi per essere più vicino a te."
-          />
-          <div className="mt-12 grid gap-8 sm:grid-cols-2">
-            <Card>
-              <h3 className="text-base font-semibold text-zinc-900">
-                Studio Napoli
-              </h3>
-              <p className="mt-2 text-sm text-zinc-600">
-                {CONTACT_INFO.address}
-              </p>
-              <p className="mt-1 text-sm text-zinc-600">
-                Tel: {CONTACT_INFO.phone}
-              </p>
-            </Card>
-            <Card>
-              <h3 className="text-base font-semibold text-zinc-900">
-                Studio Pozzuoli
-              </h3>
-              <p className="mt-2 text-sm text-zinc-600">
-                {CONTACT_INFO.addressPozzuoli}
-              </p>
-              <p className="mt-1 text-sm text-zinc-600">
-                Tel: {CONTACT_INFO.phone}
-              </p>
-            </Card>
-          </div>
-          <p className="mt-8 text-center text-sm text-zinc-500">
-            Email: {CONTACT_INFO.email}
-          </p>
-        </Container>
-      </section>
-
-      {/* 6 - CTA finale */}
-      <section className="bg-teal-700 py-16 sm:py-20">
-        <Container className="max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Pronto a prenderti cura di te?
-          </h2>
-          <p className="mt-4 text-lg leading-relaxed text-teal-100">
-            Fissa un primo appuntamento nello studio di Napoli o Pozzuoli.
-            Ti rispondo personalmente.
-          </p>
-          <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Button
-              href="/contatti"
-              variant="secondary"
-              className="w-full bg-transparent px-8 py-3.5 text-base text-white ring-white/40 hover:bg-white/10 hover:ring-white/60 sm:w-auto"
-            >
-              Contatta lo studio
-            </Button>
-            <Button
-              href={CONTACT_INFO.whatsapp}
-              variant="secondary"
-              className="w-full bg-transparent px-8 py-3.5 text-base text-white ring-white/40 hover:bg-white/10 hover:ring-white/60 sm:w-auto"
-            >
-              <svg className="mr-2 inline-block h-5 w-5 align-text-bottom" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-              Scrivi su WhatsApp
-            </Button>
-            <Button
-              href={`tel:${CONTACT_INFO.phone.replace(/\s/g, "")}`}
-              variant="secondary"
-              className="w-full bg-transparent px-8 py-3.5 text-base text-white ring-white/40 hover:bg-white/10 hover:ring-white/60 sm:w-auto"
-            >
-              Chiama ora
-            </Button>
-          </div>
-        </Container>
+        </div>
       </section>
     </>
   );

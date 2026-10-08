@@ -56,7 +56,7 @@ export default function ComeLavoroPage() {
       {/* Intro */}
       <section className="py-16 sm:py-24">
         <Container className="max-w-3xl">
-          <h1 className="text-4xl font-bold tracking-tight text-zinc-900 sm:text-5xl">
+          <h1 className="text-4xl font-light font-display tracking-tight text-zinc-900 sm:text-5xl">
             Come lavoro
           </h1>
           <p className="mt-6 text-lg leading-relaxed text-zinc-600">
@@ -79,7 +79,7 @@ export default function ComeLavoroPage() {
           <div className="mt-12 space-y-10">
             {principi.map((p) => (
               <div key={p.titolo}>
-                <h3 className="text-lg font-semibold text-zinc-900">
+                <h3 className="text-lg font-light font-display text-zinc-900">
                   {p.titolo}
                 </h3>
                 <p className="mt-2 text-base leading-relaxed text-zinc-600">
@@ -103,9 +103,9 @@ export default function ComeLavoroPage() {
             {ambiti.map((a) => (
               <div
                 key={a.titolo}
-                className="rounded-xl border border-zinc-100 bg-white p-6 shadow-sm"
+                className="rounded-xl border border-zinc-100 bg-paper p-6 shadow-sm"
               >
-                <h3 className="font-semibold text-zinc-900">{a.titolo}</h3>
+                <h3 className="font-light font-display text-zinc-900">{a.titolo}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-zinc-600">
                   {a.descrizione}
                 </p>

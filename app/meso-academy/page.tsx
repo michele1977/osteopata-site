@@ -59,7 +59,7 @@ export default function MesoAcademyPage() {
             className="mx-auto h-auto w-[140px] object-contain sm:w-[160px]"
             priority
           />
-          <h1 className="mt-6 text-4xl font-bold tracking-tight text-zinc-900 sm:text-5xl">
+          <h1 className="mt-6 text-4xl font-light font-display tracking-tight text-zinc-900 sm:text-5xl">
             Cos&rsquo;&egrave; M.E.S.O Academy
           </h1>
           <p className="mt-5 text-lg leading-relaxed text-zinc-600">
@@ -85,16 +85,16 @@ export default function MesoAcademyPage() {
       {/* Ambiti formativi */}
       <section className="border-t border-zinc-100 bg-zinc-50 py-12 sm:py-16">
         <Container>
-          <h2 className="text-center text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">
+          <h2 className="text-center text-3xl font-light font-display tracking-tight text-zinc-900 sm:text-4xl">
             Ambiti formativi
           </h2>
           <div className="mt-10 grid gap-6 sm:grid-cols-3">
             {ambiti.map((a) => (
               <div
                 key={a.titolo}
-                className="rounded-xl bg-white p-6 ring-1 ring-zinc-100"
+                className="rounded-xl bg-paper p-6 ring-1 ring-zinc-100"
               >
-                <h3 className="font-semibold text-zinc-900">{a.titolo}</h3>
+                <h3 className="font-light font-display text-zinc-900">{a.titolo}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-zinc-600">
                   {a.descrizione}
                 </p>
@@ -107,13 +107,13 @@ export default function MesoAcademyPage() {
       {/* Valori */}
       <section className="py-12 sm:py-16">
         <Container>
-          <h2 className="text-center text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">
+          <h2 className="text-center text-3xl font-light font-display tracking-tight text-zinc-900 sm:text-4xl">
             I nostri valori
           </h2>
           <div className="mt-10 grid gap-6 sm:grid-cols-3">
             {valori.map((v) => (
               <div key={v.titolo} className="text-center">
-                <h3 className="font-semibold text-zinc-900">{v.titolo}</h3>
+                <h3 className="font-light font-display text-zinc-900">{v.titolo}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-zinc-600">
                   {v.descrizione}
                 </p>
@@ -126,7 +126,7 @@ export default function MesoAcademyPage() {
       {/* Logistica */}
       <section className="border-t border-zinc-100 bg-zinc-50 py-12 sm:py-16">
         <Container className="max-w-3xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">
+          <h2 className="text-3xl font-light font-display tracking-tight text-zinc-900 sm:text-4xl">
             Dove si svolgono i corsi
           </h2>
           <p className="mt-4 text-base leading-relaxed text-zinc-600">
@@ -139,7 +139,7 @@ export default function MesoAcademyPage() {
       {/* CTA */}
       <section className="py-14 sm:py-20">
         <Container className="max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">
+          <h2 className="text-3xl font-light font-display tracking-tight text-zinc-900 sm:text-4xl">
             Informazioni sui corsi
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-zinc-600">

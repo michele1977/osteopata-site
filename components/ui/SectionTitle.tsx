@@ -11,7 +11,7 @@ export default function SectionTitle({
 }: SectionTitleProps) {
   return (
     <div className={centered ? "text-center" : ""}>
-      <h2 className="text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">
+      <h2 className="font-display text-4xl font-light leading-[1.05] tracking-tight text-ink sm:text-5xl">
         {title}
       </h2>
       {subtitle && (

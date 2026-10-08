@@ -16,7 +16,7 @@ export default function RecensioniPage() {
     <>
       <section className="bg-gradient-to-b from-teal-50 to-white py-16 sm:py-24">
         <Container className="max-w-3xl text-center">
-          <h1 className="text-4xl font-bold tracking-tight text-zinc-900 sm:text-5xl">
+          <h1 className="text-4xl font-light font-display tracking-tight text-zinc-900 sm:text-5xl">
             Recensioni
           </h1>
           <p className="mt-6 text-lg leading-relaxed text-zinc-600">

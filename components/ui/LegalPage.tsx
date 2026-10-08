@@ -10,7 +10,7 @@ export default function LegalPage({ title, updated, children }: LegalPageProps) 
   return (
     <section className="py-16 sm:py-24">
       <Container className="max-w-3xl">
-        <h1 className="text-4xl font-bold tracking-tight text-zinc-900 sm:text-5xl">
+        <h1 className="text-4xl font-light font-display tracking-tight text-zinc-900 sm:text-5xl">
           {title}
         </h1>
         <p className="mt-4 text-sm text-zinc-400">Ultimo aggiornamento: {updated}</p>

@@ -2,9 +2,11 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { NAV_LINKS, SITE_NAME } from "@/lib/constants";
+import { CONTACT_INFO, NAV_LINKS } from "@/lib/constants";
+import Logo from "@/components/layout/Logo";
+
+const tel = `tel:${CONTACT_INFO.phone.replace(/\s/g, "")}`;
 import Container from "@/components/ui/Container";
 
 export default function Header() {
@@ -12,18 +14,11 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-gray-200 bg-white backdrop-blur-sm">
-      <Container className="flex h-16 items-center gap-10">
+    <header className="sticky top-0 z-50 border-b border-line bg-bone/85 backdrop-blur-md">
+      <Container className="flex h-[4.5rem] items-center gap-10">
         {/* Logo */}
         <Link href="/" className="shrink-0 transition-opacity duration-200 hover:opacity-80">
-          <Image
-            src="/logo_cropped.png"
-            alt="Roberto Trupiano Osteopata"
-            width={155}
-            height={40}
-            className="h-8 w-auto max-w-[140px] object-contain sm:h-9 sm:max-w-none"
-            priority
-          />
+          <Logo />
         </Link>
 
         {/* Desktop nav + CTA */}
@@ -33,22 +28,22 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition-colors hover:text-teal-700 ${
+                className={`text-sm font-medium transition-colors hover:text-ink ${
                   pathname === link.href
-                    ? "text-teal-700"
-                    : "text-zinc-600"
+                    ? "text-ink underline decoration-tufo decoration-2 underline-offset-[6px]"
+                    : "text-stone"
                 }`}
               >
                 {link.label}
               </Link>
             ))}
           </nav>
-          <Link
-            href="/contatti"
-            className="rounded-lg bg-teal-700 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-teal-800"
+          <a
+            href={tel}
+            className="rounded-full bg-ink px-5 py-2.5 text-sm font-medium text-paper transition-colors hover:bg-tufo"
           >
-            Prenota una visita
-          </Link>
+            Chiama
+          </a>
         </div>
 
         {/* Mobile burger */}
@@ -77,29 +72,28 @@ export default function Header() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <nav className="border-t border-zinc-100 bg-white md:hidden" aria-label="Navigazione mobile">
+        <nav className="border-t border-line bg-bone md:hidden" aria-label="Navigazione mobile">
           <Container className="flex flex-col gap-4 py-4">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className={`text-sm font-medium transition-colors hover:text-teal-700 ${
+                className={`text-sm font-medium transition-colors hover:text-ink ${
                   pathname === link.href
-                    ? "text-teal-700"
-                    : "text-zinc-600"
+                    ? "text-ink underline decoration-tufo decoration-2 underline-offset-[6px]"
+                    : "text-stone"
                 }`}
               >
                 {link.label}
               </Link>
             ))}
-            <Link
-              href="/contatti"
-              onClick={() => setMenuOpen(false)}
-              className="mt-2 rounded-lg bg-teal-700 px-4 py-2 text-center text-sm font-semibold text-white transition-colors hover:bg-teal-800"
+            <a
+              href={tel}
+              className="mt-2 rounded-full bg-ink px-4 py-3 text-center text-sm font-medium text-paper transition-colors hover:bg-tufo"
             >
-              Prenota una visita
-            </Link>
+              Chiama {CONTACT_INFO.phone}
+            </a>
           </Container>
         </nav>
       )}

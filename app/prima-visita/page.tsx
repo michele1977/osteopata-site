@@ -77,7 +77,7 @@ const infoPratiche = [
   },
   {
     titolo: "Solo su appuntamento",
-    testo: "Le visite si svolgono esclusivamente su appuntamento. Puoi prenotare telefonicamente o via WhatsApp.",
+    testo: "Le visite si svolgono esclusivamente su appuntamento. Per fissare un appuntamento basta una telefonata.",
     icon: (
       <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
@@ -92,7 +92,7 @@ export default function PrimaVisitaPage() {
       {/* Hero */}
       <section className="bg-zinc-50 py-16 sm:py-24">
         <Container className="max-w-3xl text-center">
-          <h1 className="text-4xl font-bold tracking-tight text-zinc-900 sm:text-5xl">
+          <h1 className="text-4xl font-light font-display tracking-tight text-zinc-900 sm:text-5xl">
             Come si svolge la prima visita
           </h1>
           <p className="mt-6 text-lg leading-relaxed text-zinc-600">
@@ -105,7 +105,7 @@ export default function PrimaVisitaPage() {
       {/* Introduzione */}
       <section className="py-16 sm:py-24">
         <Container className="max-w-3xl">
-          <h2 className="text-2xl font-bold text-zinc-900 sm:text-3xl">
+          <h2 className="text-2xl font-light font-display text-zinc-900 sm:text-3xl">
             A cosa serve la prima visita
           </h2>
           <p className="mt-4 text-base leading-relaxed text-zinc-600">
@@ -123,7 +123,7 @@ export default function PrimaVisitaPage() {
       {/* 4 fasi */}
       <section className="bg-zinc-50 py-16 sm:py-24">
         <Container>
-          <h2 className="text-center text-2xl font-bold text-zinc-900 sm:text-3xl">
+          <h2 className="text-center text-2xl font-light font-display text-zinc-900 sm:text-3xl">
             Le 4 fasi della visita
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-base text-zinc-600">
@@ -135,7 +135,7 @@ export default function PrimaVisitaPage() {
             {fasi.map((fase) => (
               <div
                 key={fase.numero}
-                className="relative rounded-2xl border border-zinc-100 bg-white p-6 shadow-sm"
+                className="relative rounded-2xl border border-zinc-100 bg-paper p-6 shadow-sm"
               >
                 <div className="flex items-center gap-4">
                   <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-teal-50 text-teal-700">
@@ -145,7 +145,7 @@ export default function PrimaVisitaPage() {
                     <span className="text-xs font-semibold uppercase tracking-wider text-teal-600">
                       Fase {fase.numero}
                     </span>
-                    <h3 className="text-lg font-bold text-zinc-900">
+                    <h3 className="text-lg font-light font-display text-zinc-900">
                       {fase.titolo}
                     </h3>
                   </div>
@@ -162,7 +162,7 @@ export default function PrimaVisitaPage() {
       {/* Info pratiche */}
       <section className="py-16 sm:py-24">
         <Container>
-          <h2 className="text-center text-2xl font-bold text-zinc-900 sm:text-3xl">
+          <h2 className="text-center text-2xl font-light font-display text-zinc-900 sm:text-3xl">
             Informazioni pratiche
           </h2>
 
@@ -170,12 +170,12 @@ export default function PrimaVisitaPage() {
             {infoPratiche.map((info) => (
               <div
                 key={info.titolo}
-                className="rounded-2xl border border-zinc-100 bg-white p-6 text-center shadow-sm"
+                className="rounded-2xl border border-zinc-100 bg-paper p-6 text-center shadow-sm"
               >
                 <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-teal-50 text-teal-700">
                   {info.icon}
                 </span>
-                <h3 className="mt-4 text-base font-bold text-zinc-900">
+                <h3 className="mt-4 text-base font-light font-display text-zinc-900">
                   {info.titolo}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-zinc-600">
@@ -190,25 +190,25 @@ export default function PrimaVisitaPage() {
       {/* CTA finale */}
       <section className="bg-teal-700 py-16 sm:py-24">
         <Container className="text-center">
-          <h2 className="text-2xl font-bold text-white sm:text-3xl">
+          <h2 className="text-2xl font-light font-display text-white sm:text-3xl">
             Vuoi fissare la tua prima visita?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-teal-100">
-            Chiamami o scrivimi su WhatsApp. Ti rispondo personalmente e
+            Chiamami. Ti rispondo personalmente e
             troviamo insieme il giorno più comodo per te.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button
               href="/contatti"
-              className="bg-white text-teal-700 hover:bg-zinc-100"
+              className="bg-paper text-teal-700 hover:bg-zinc-100"
             >
               Contatta lo studio
             </Button>
             <Button
-              href={CONTACT_INFO.whatsapp}
+              href={`tel:${CONTACT_INFO.phone.replace(/\s/g, "")}`}
               className="border border-white/30 bg-transparent text-white hover:bg-teal-600"
             >
-              Scrivi su WhatsApp
+              Chiama {CONTACT_INFO.phone}
             </Button>
           </div>
         </Container>
