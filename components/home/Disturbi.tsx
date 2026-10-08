@@ -133,8 +133,7 @@ export default function Disturbi() {
         {/* Dettaglio zona */}
         <div className="flex flex-col lg:col-span-7">
           <div className="flex items-center gap-3 font-mono font-medium text-[11.5px] uppercase tracking-[0.18em] text-stone">
-            <span className="text-tufo">02</span>
-            <span className="h-px w-8 bg-ink/30" />
+            <span className="h-px w-8 bg-tufo" />
             Cosa trattiamo
           </div>
           <h2 className="mt-6 font-display text-5xl font-light tracking-tight md:text-6xl">Dove fa male?</h2>
@@ -152,9 +151,8 @@ export default function Disturbi() {
               <span className="text-right text-sm text-stone">{a.intro}</span>
             </div>
             <ol>
-              {a.items.map(([title, text], i) => (
-                <li key={title} className="group grid grid-cols-[2.5rem_1fr] gap-x-4 border-b border-ink/15 py-6 last:border-b-0 last:pb-0">
-                  <span className="pt-1.5 font-mono font-medium text-xs text-tufo">{String(i + 1).padStart(2, '0')}</span>
+              {a.items.map(([title, text]) => (
+                <li key={title} className="group border-b border-ink/15 py-6 last:border-b-0 last:pb-0">
                   <div>
                     <div className="font-display text-2xl transition group-hover:translate-x-1 md:text-[1.75rem]">{title}</div>
                     <p className="mt-1.5 max-w-xl leading-relaxed text-ink/85">{text}</p>

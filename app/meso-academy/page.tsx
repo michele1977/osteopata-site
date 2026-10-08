@@ -103,7 +103,7 @@ export default function MesoAcademyPage() {
 
       {/* Ambiti */}
       <Container as="section" className="py-24 lg:py-28">
-        <Eyebrow n="01">Ambiti formativi</Eyebrow>
+        <Eyebrow>Ambiti formativi</Eyebrow>
         <div className="mt-12 grid gap-x-10 md:grid-cols-3">
           {ambiti.map((a) => (
             <div key={a.titolo} className="border-t border-line py-8">
@@ -117,7 +117,7 @@ export default function MesoAcademyPage() {
       {/* Valori */}
       <section className="border-t border-line bg-paper">
         <Container className="py-24 lg:py-28">
-          <Eyebrow n="02">I nostri valori</Eyebrow>
+          <Eyebrow>I nostri valori</Eyebrow>
           <div className="mt-12 grid gap-x-10 md:grid-cols-3">
             {valori.map((v) => (
               <div key={v.titolo} className="border-t border-line py-8">

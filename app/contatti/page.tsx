@@ -14,8 +14,8 @@ export const metadata: Metadata = {
 const tel = `tel:${CONTACT_INFO.phone.replace(/\s/g, "")}`;
 
 const sedi = [
-  { n: "01", citta: "Napoli", indirizzo: CONTACT_INFO.address },
-  { n: "02", citta: "Pozzuoli", indirizzo: CONTACT_INFO.addressPozzuoli },
+  { citta: "Napoli", indirizzo: CONTACT_INFO.address },
+  { citta: "Pozzuoli", indirizzo: CONTACT_INFO.addressPozzuoli },
 ];
 
 const mapsDir = (indirizzo: string) =>
@@ -74,13 +74,12 @@ export default function ContattiPage() {
 
       {/* Sedi */}
       <Container as="section" className="py-24 lg:py-28">
-        <Eyebrow n="01">Dove ricevo</Eyebrow>
+        <Eyebrow>Dove ricevo</Eyebrow>
         <div className="mt-12 space-y-20">
           {sedi.map((s) => (
             <div key={s.citta} className="grid gap-8 border-t border-line pt-10 lg:grid-cols-12 lg:items-start">
               <div className="lg:col-span-4">
-                <span className="text-xs font-medium text-tufo">{s.n}</span>
-                <h2 className="mt-3 font-display text-5xl font-light">{s.citta}</h2>
+                <h2 className="font-display text-5xl font-light">{s.citta}</h2>
                 <p className="mt-3 text-lg text-ink/80">{s.indirizzo}</p>
                 <a
                   href={mapsDir(s.indirizzo)}

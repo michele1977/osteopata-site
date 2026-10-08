@@ -76,17 +76,14 @@ export default function ComeLavoroPage() {
       {/* Principi */}
       <Container as="section" className="grid gap-12 py-24 lg:grid-cols-12 lg:py-28">
         <div className="lg:col-span-4">
-          <Eyebrow n="01">Principi</Eyebrow>
+          <Eyebrow>Principi</Eyebrow>
           <h2 className="mt-6 font-display text-4xl font-light leading-tight md:text-5xl">
             I principi del mio approccio.
           </h2>
         </div>
         <ol className="lg:col-span-8">
-          {principi.map((p, i) => (
-            <li key={p.titolo} className="flex gap-6 border-t border-line py-8">
-              <span className="w-8 shrink-0 pt-2 text-xs font-medium text-tufo">
-                {String(i + 1).padStart(2, "0")}
-              </span>
+          {principi.map((p) => (
+            <li key={p.titolo} className="border-t border-line py-8">
               <div>
                 <h3 className="font-display text-2xl font-light md:text-3xl">{p.titolo}</h3>
                 <p className="mt-3 leading-relaxed text-ink/85">{p.descrizione}</p>
@@ -99,7 +96,7 @@ export default function ComeLavoroPage() {
       {/* Triangolo della salute */}
       <section className="bg-sea py-24 text-paper lg:py-28">
         <Container>
-          <Eyebrow n="02" dark>
+          <Eyebrow dark>
             Il metodo
           </Eyebrow>
           <h2 className="mt-6 max-w-2xl font-display text-5xl font-light leading-[1.02] tracking-tight md:text-6xl">
@@ -123,7 +120,7 @@ export default function ComeLavoroPage() {
       {/* In pratica */}
       <Container as="section" className="grid gap-12 py-24 lg:grid-cols-12 lg:py-28">
         <div className="lg:col-span-4">
-          <Eyebrow n="03">In pratica</Eyebrow>
+          <Eyebrow>In pratica</Eyebrow>
           <h2 className="mt-6 font-display text-4xl font-light leading-tight md:text-5xl">
             Cosa succede in studio.
           </h2>

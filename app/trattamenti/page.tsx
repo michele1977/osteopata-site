@@ -160,14 +160,11 @@ export default function TrattamentiPage() {
 
       {/* Disturbi */}
       <Container as="section" className="py-24 lg:py-28">
-        <Eyebrow n="01">I disturbi pi&ugrave; comuni</Eyebrow>
+        <Eyebrow>I disturbi pi&ugrave; comuni</Eyebrow>
         <div className="mt-12 grid gap-x-16 md:grid-cols-2">
-          {problemi.map((p, i) => (
+          {problemi.map((p) => (
             <article key={p.titolo} className="border-t border-line py-10">
-              <div className="flex items-baseline gap-5">
-                <span className="w-8 shrink-0 text-xs font-medium text-tufo">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
+              <div>
                 <div>
                   <h2 className="font-display text-3xl font-light">{p.titolo}</h2>
                   <p className="mt-3 leading-relaxed text-ink/85">{p.intro}</p>
@@ -200,7 +197,7 @@ export default function TrattamentiPage() {
       <section className="bg-sea py-24 text-paper lg:py-28">
         <Container className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <Eyebrow n="02" dark>
+            <Eyebrow dark>
               Bocca e postura
             </Eyebrow>
             <h2 className="mt-6 font-display text-5xl font-light leading-[1.02] tracking-tight md:text-6xl">
@@ -235,7 +232,7 @@ export default function TrattamentiPage() {
       {/* Prima visita */}
       <Container as="section" className="grid gap-8 py-24 lg:grid-cols-12 lg:items-end lg:py-28">
         <div className="lg:col-span-8">
-          <Eyebrow n="03">La prima visita</Eyebrow>
+          <Eyebrow>La prima visita</Eyebrow>
           <h2 className="mt-6 font-display text-4xl font-light leading-tight md:text-5xl">
             Non sai cosa aspettarti?
           </h2>

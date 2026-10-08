@@ -62,7 +62,7 @@ export default function PrimaVisitaPage() {
 
       {/* Fasi */}
       <Container as="section" className="py-24 lg:py-28">
-        <Eyebrow n="01">Le quattro fasi</Eyebrow>
+        <Eyebrow>Le quattro fasi</Eyebrow>
         <h2 className="mt-6 max-w-2xl font-display text-4xl font-light leading-tight md:text-5xl">
           Cosa succede, passo dopo passo.
         </h2>
@@ -83,7 +83,7 @@ export default function PrimaVisitaPage() {
       <section className="border-t border-line">
         <Container className="grid gap-12 py-24 lg:grid-cols-12 lg:py-28">
           <div className="lg:col-span-4">
-            <Eyebrow n="02">Informazioni pratiche</Eyebrow>
+            <Eyebrow>Informazioni pratiche</Eyebrow>
             <h2 className="mt-6 font-display text-4xl font-light leading-tight md:text-5xl">
               Prima di venire in studio.
             </h2>

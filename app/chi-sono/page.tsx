@@ -95,15 +95,14 @@ export default function ChiSonoPage() {
 
       {/* Approccio */}
       <Container as="section" className="py-24 lg:py-28">
-        <Eyebrow n="01">Il mio approccio</Eyebrow>
+        <Eyebrow>Il mio approccio</Eyebrow>
         <h2 className="mt-6 max-w-2xl font-display text-4xl font-light leading-tight md:text-5xl">
           Non applico protocolli standard: ogni incontro riflette la persona che ho davanti.
         </h2>
         <div className="mt-14 grid gap-x-10 sm:grid-cols-2 lg:grid-cols-4">
-          {approccio.map((a, i) => (
+          {approccio.map((a) => (
             <div key={a.titolo} className="border-t border-line py-8">
-              <span className="text-xs font-medium text-tufo">{String(i + 1).padStart(2, "0")}</span>
-              <h3 className="mt-4 font-display text-2xl font-light">{a.titolo}</h3>
+              <h3 className="font-display text-2xl font-light">{a.titolo}</h3>
               <p className="mt-3 text-[15px] leading-relaxed text-ink/80">{a.testo}</p>
             </div>
           ))}
@@ -114,7 +113,7 @@ export default function ChiSonoPage() {
       <section className="border-t border-line bg-paper">
         <Container className="grid gap-12 py-24 lg:grid-cols-12 lg:py-28">
           <div className="lg:col-span-4">
-            <Eyebrow n="02">Formazione</Eyebrow>
+            <Eyebrow>Formazione</Eyebrow>
             <h2 className="mt-6 font-display text-4xl font-light leading-tight md:text-5xl">
               Oltre cento corsi, <em className="text-tufo">un metodo.</em>
             </h2>
@@ -146,7 +145,7 @@ export default function ChiSonoPage() {
       <section className="bg-ink py-24 text-paper lg:py-28">
         <Container className="grid gap-10 lg:grid-cols-12 lg:items-center">
           <div className="lg:col-span-8">
-            <Eyebrow n="03" dark>
+            <Eyebrow dark>
               Attivit&agrave; formativa
             </Eyebrow>
             <h2 className="mt-6 font-display text-5xl font-light tracking-tight md:text-6xl">
@@ -178,7 +177,7 @@ export default function ChiSonoPage() {
 
       {/* Per chi */}
       <Container as="section" className="py-24 lg:py-28">
-        <Eyebrow n="04">Per chi &egrave; indicato</Eyebrow>
+        <Eyebrow>Per chi &egrave; indicato</Eyebrow>
         <h2 className="mt-6 max-w-2xl font-display text-4xl font-light leading-tight md:text-5xl">
           L&rsquo;osteopatia &egrave; adatta a diverse esigenze e fasce d&rsquo;et&agrave;.
         </h2>

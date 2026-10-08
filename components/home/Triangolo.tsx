@@ -28,8 +28,7 @@ export default function Triangolo() {
       <div className="grid gap-16 lg:grid-cols-12">
         <div className="lg:col-span-5">
           <div className="flex items-center gap-3 text-[11.5px] font-medium uppercase tracking-[0.18em] text-stone">
-            <span className="text-tufo">01</span>
-            <span className="h-px w-8 bg-ink/30" />
+            <span className="h-px w-8 bg-tufo" />
             Il metodo
           </div>
           <h2 className="mt-6 font-display text-5xl font-light leading-[1.02] tracking-tight md:text-6xl">

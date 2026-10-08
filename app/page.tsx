@@ -24,11 +24,10 @@ const studi = [
   { citta: "Pozzuoli", indirizzo: CONTACT_INFO.addressPozzuoli },
 ];
 
-function Label({ n, children }: { n: string; children: React.ReactNode }) {
+function Label({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex items-center gap-3 text-[11.5px] font-medium uppercase tracking-[0.18em] text-stone">
-      <span className="text-tufo">{n}</span>
-      <span className="h-px w-8 bg-ink/30" />
+      <span className="h-px w-8 bg-tufo" />
       {children}
     </div>
   );
@@ -151,7 +150,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="lg:col-span-8">
-            <Label n="03">Chi sono</Label>
+            <Label>Chi sono</Label>
             <p className="mt-6 font-display text-3xl font-light leading-snug md:text-4xl">
               Dott. Roberto Trupiano, osteopata D.O. Dalle basi biomeccaniche dell&apos;I.S.E.F. a
               sei anni di formazione all&apos;A.T. Still Academy, fino a{" "}
@@ -181,8 +180,7 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-[1320px] gap-10 px-6 lg:grid-cols-12 lg:items-end lg:px-10">
           <div className="lg:col-span-8">
             <div className="flex items-center gap-3 text-[11.5px] font-medium uppercase tracking-[0.18em] text-paper/75">
-              <span className="text-tufo">04</span>
-              <span className="h-px w-8 bg-paper/30" />
+              <span className="h-px w-8 bg-tufo" />
               M.E.S.O. Academy
             </div>
             <h2 className="mt-6 font-display text-5xl font-light tracking-tight md:text-6xl">
@@ -206,7 +204,7 @@ export default function HomePage() {
 
       {/* RECENSIONI */}
       <section className="mx-auto max-w-[1320px] px-6 py-28 lg:px-10">
-        <Label n="05">Dicono di me</Label>
+        <Label>Dicono di me</Label>
         <div className="mt-10 grid gap-10 md:grid-cols-3">
           {RECENSIONI.slice(0, 3).map((r) => (
             <figure key={r.nome + r.data} className="border-t border-line pt-6">
@@ -239,7 +237,10 @@ export default function HomePage() {
         <div className="relative overflow-hidden rounded-[2.5rem] bg-tufo px-6 py-20 text-paper lg:px-16">
           <div className="grid gap-14 lg:grid-cols-12">
             <div className="lg:col-span-6">
-              <div className="text-[11.5px] font-medium uppercase tracking-[0.18em] text-paper/70">06 — Contatti</div>
+              <div className="flex items-center gap-3 text-[11.5px] font-medium uppercase tracking-[0.18em] text-paper/70">
+                <span className="h-px w-8 bg-paper/40" />
+                Contatti
+              </div>
               <h2 className="mt-6 font-display text-6xl font-light leading-[0.95] tracking-tight md:text-7xl">
                 Parliamone
                 <br />
