@@ -8,7 +8,7 @@ import CallBand from "@/components/ui/CallBand";
 import { FORMAZIONE } from "@/lib/formazione";
 
 export const metadata: Metadata = {
-  title: "Chi sono – Osteopata a Napoli e Pozzuoli | Roberto Trupiano",
+  title: "Chi sono – Osteopata a Napoli e Pozzuoli",
   description:
     "Roberto Trupiano, osteopata a Napoli e Pozzuoli. Trattamenti personalizzati per mal di schiena, cervicale, postura e dolori articolari.",
 };
@@ -124,7 +124,7 @@ export default function ChiSonoPage() {
           <ul className="lg:col-span-8">
             {FORMAZIONE.map(([k, v]) => (
               <li key={v} className="flex gap-6 border-t border-line py-5">
-                <span className="w-16 shrink-0 text-xs font-medium text-tufo">{k}</span>
+                <span className="w-24 shrink-0 text-xs font-medium text-tufo">{k}</span>
                 <span className="text-ink/85">{v}</span>
               </li>
             ))}

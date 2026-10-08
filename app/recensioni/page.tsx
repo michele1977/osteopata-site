@@ -38,7 +38,7 @@ export default function RecensioniPage() {
               <blockquote className="font-display text-3xl font-light leading-snug md:text-4xl">
                 &ldquo;{r.testo}&rdquo;
               </blockquote>
-              <figcaption className="mt-6 text-[11.5px] font-medium uppercase tracking-[0.18em] text-stone">
+              <figcaption className="mt-6 text-[13px] sm:text-[11.5px] font-medium uppercase tracking-[0.18em] text-stone">
                 {r.nome} · {r.visita} · {r.data}
               </figcaption>
             </figure>

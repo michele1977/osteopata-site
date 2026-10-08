@@ -91,7 +91,7 @@ export default function PrimaVisitaPage() {
           <dl className="lg:col-span-8">
             {infoPratiche.map((info) => (
               <div key={info.titolo} className="grid gap-2 border-t border-line py-7 sm:grid-cols-3 sm:gap-8">
-                <dt className="text-[11.5px] font-medium uppercase tracking-[0.18em] text-stone sm:pt-1">
+                <dt className="text-[13px] sm:text-[11.5px] font-medium uppercase tracking-[0.18em] text-stone sm:pt-1">
                   {info.titolo}
                 </dt>
                 <dd className="leading-relaxed text-ink/85 sm:col-span-2">{info.testo}</dd>

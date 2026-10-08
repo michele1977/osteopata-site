@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { NAV_LINKS, SITE_NAME, CONTACT_INFO, SOCIAL_LINKS, LEGAL_INFO } from "@/lib/constants";
 import Container from "@/components/ui/Container";
 import { LogoMark } from "@/components/layout/Logo";
@@ -56,18 +55,8 @@ export default function Footer() {
                 </li>
               ))}
               <li>
-                <Link
-                  href="/meso-academy"
-                  className="flex items-center gap-2 text-sm text-paper/70 hover:text-[#e08a68] transition-colors"
-                >
-                  <Image
-                    src="/meso-logo.png"
-                    alt="Logo M.E.S.O Academy"
-                    width={28}
-                    height={28}
-                    className="h-7 w-7 object-contain"
-                  />
-                  M.E.S.O Academy
+                <Link href="/meso-academy" className="text-sm text-paper/70 hover:text-[#e08a68] transition-colors">
+                  M.E.S.O. Academy
                 </Link>
               </li>
             </ul>

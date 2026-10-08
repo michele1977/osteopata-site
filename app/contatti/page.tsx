@@ -42,7 +42,7 @@ export default function ContattiPage() {
         aside={
           <dl className="rounded-[1.75rem] bg-paper p-8 ring-1 ring-line">
             <div>
-              <dt className="text-[11.5px] font-medium uppercase tracking-[0.18em] text-stone">
+              <dt className="text-[13px] sm:text-[11.5px] font-medium uppercase tracking-[0.18em] text-stone">
                 Telefono
               </dt>
               <dd className="mt-2">
@@ -52,7 +52,7 @@ export default function ContattiPage() {
               </dd>
             </div>
             <div className="mt-6 border-t border-line pt-6">
-              <dt className="text-[11.5px] font-medium uppercase tracking-[0.18em] text-stone">Email</dt>
+              <dt className="text-[13px] sm:text-[11.5px] font-medium uppercase tracking-[0.18em] text-stone">Email</dt>
               <dd className="mt-2">
                 <a
                   href={`mailto:${CONTACT_INFO.email}`}

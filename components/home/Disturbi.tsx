@@ -132,7 +132,7 @@ export default function Disturbi() {
 
         {/* Dettaglio zona */}
         <div className="flex flex-col lg:col-span-7">
-          <div className="flex items-center gap-3 font-mono font-medium text-[11.5px] uppercase tracking-[0.18em] text-stone">
+          <div className="flex items-center gap-3 font-mono font-medium text-[13px] sm:text-[11.5px] uppercase tracking-[0.18em] text-stone">
             <span className="h-px w-8 bg-tufo" />
             Cosa trattiamo
           </div>

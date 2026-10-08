@@ -27,7 +27,7 @@ export default function Triangolo() {
     <section id="metodo" className="mx-auto max-w-[1320px] px-6 py-28 lg:px-10">
       <div className="grid gap-16 lg:grid-cols-12">
         <div className="lg:col-span-5">
-          <div className="flex items-center gap-3 text-[11.5px] font-medium uppercase tracking-[0.18em] text-stone">
+          <div className="flex items-center gap-3 text-[13px] sm:text-[11.5px] font-medium uppercase tracking-[0.18em] text-stone">
             <span className="h-px w-8 bg-tufo" />
             Il metodo
           </div>
@@ -78,7 +78,7 @@ export default function Triangolo() {
               ))}
             </svg>
             <div className="relative max-w-sm text-center">
-              <div className="text-[11.5px] font-medium uppercase tracking-[0.2em] text-paper/75">
+              <div className="text-[13px] sm:text-[11.5px] font-medium uppercase tracking-[0.2em] text-paper/75">
                 Dimensione {triangle[tri].n}
               </div>
               <div className="mt-3 font-display text-4xl italic">{triangle[tri].key}</div>

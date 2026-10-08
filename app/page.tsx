@@ -26,7 +26,7 @@ const studi = [
 
 function Label({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex items-center gap-3 text-[11.5px] font-medium uppercase tracking-[0.18em] text-stone">
+    <div className="flex items-center gap-3 text-[13px] sm:text-[11.5px] font-medium uppercase tracking-[0.18em] text-stone">
       <span className="h-px w-8 bg-tufo" />
       {children}
     </div>
@@ -47,7 +47,7 @@ export default function HomePage() {
         />
         <div className="relative mx-auto grid max-w-[1320px] gap-12 px-6 pb-20 pt-16 lg:grid-cols-12 lg:items-center lg:px-10 lg:pt-20">
           <div className="lg:col-span-7">
-            <div className="flex items-center gap-3 text-[11.5px] font-medium uppercase tracking-[0.18em] text-stone">
+            <div className="flex items-center gap-3 text-[13px] sm:text-[11.5px] font-medium uppercase tracking-[0.18em] text-stone">
               <span className="h-px w-8 bg-tufo" />
               Osteopata D.O. · Napoli &amp; Pozzuoli
             </div>
@@ -68,13 +68,13 @@ export default function HomePage() {
             </p>
             <dl className="mt-8 grid max-w-lg grid-cols-2 border-t border-ink/15 pt-3">
               <div>
-                <dt className="text-[11.5px] font-medium uppercase tracking-[0.18em] text-stone">Telefono</dt>
+                <dt className="text-[13px] sm:text-[11.5px] font-medium uppercase tracking-[0.18em] text-stone">Telefono</dt>
                 <dd className="mt-0.5">
                   <span className="font-display text-xl">{phoneShort}</span>
                 </dd>
               </div>
               <div className="border-l border-ink/15 pl-6">
-                <dt className="text-[11.5px] font-medium uppercase tracking-[0.18em] text-stone">Studi</dt>
+                <dt className="text-[13px] sm:text-[11.5px] font-medium uppercase tracking-[0.18em] text-stone">Studi</dt>
                 <dd className="mt-0.5">
                   <a
                     href="#contatti"
@@ -119,7 +119,7 @@ export default function HomePage() {
             ].map(([a, b]) => (
               <div key={b} className="px-4 py-6 first:pl-0">
                 <div className="font-display text-2xl">{a}</div>
-                <div className="text-[11.5px] font-medium uppercase tracking-wider text-stone">{b}</div>
+                <div className="text-[13px] sm:text-[11.5px] font-medium uppercase tracking-wider text-stone">{b}</div>
               </div>
             ))}
           </div>
@@ -155,7 +155,7 @@ export default function HomePage() {
             <ul className="mt-12 grid sm:grid-cols-2 sm:gap-x-10">
               {FORMAZIONE.map(([k, v]) => (
                 <li key={v} className="flex gap-5 border-t border-line py-4">
-                  <span className="w-14 shrink-0 text-xs font-medium text-tufo">{k}</span>
+                  <span className="w-20 shrink-0 text-xs font-medium text-tufo">{k}</span>
                   <span className="text-[15px] text-ink/85">{v}</span>
                 </li>
               ))}
@@ -170,33 +170,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* M.E.S.O. ACADEMY */}
-      <section id="eventi" className="bg-ink py-28 text-paper">
-        <div className="mx-auto grid max-w-[1320px] gap-10 px-6 lg:grid-cols-12 lg:items-end lg:px-10">
-          <div className="lg:col-span-8">
-            <div className="flex items-center gap-3 text-[11.5px] font-medium uppercase tracking-[0.18em] text-paper/75">
-              <span className="h-px w-8 bg-tufo" />
-              M.E.S.O. Academy
-            </div>
-            <h2 className="mt-6 font-display text-5xl font-light tracking-tight md:text-6xl">
-              Formazione &amp; incontri
-            </h2>
-            <p className="mt-6 max-w-xl leading-relaxed text-paper/75">
-              Corsi e seminari per professionisti della salute, tra postura, kinesiologia applicata
-              e approccio metabolico.
-            </p>
-          </div>
-          <div className="lg:col-span-4 lg:text-right">
-            <Link
-              href="/meso-academy"
-              className="inline-block rounded-full bg-paper px-7 py-4 text-ink transition hover:bg-tufo hover:text-paper"
-            >
-              Scopri l&apos;Academy →
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* RECENSIONI */}
       <section className="mx-auto max-w-[1320px] px-6 py-28 lg:px-10">
         <Label>Dicono di me</Label>
@@ -206,7 +179,7 @@ export default function HomePage() {
               <blockquote className="font-display text-2xl font-light leading-snug md:text-3xl">
                 “{r.testo}”
               </blockquote>
-              <figcaption className="mt-5 text-[11.5px] font-medium uppercase tracking-[0.18em] text-stone">
+              <figcaption className="mt-5 text-[13px] sm:text-[11.5px] font-medium uppercase tracking-[0.18em] text-stone">
                 {r.nome} · {r.data}
               </figcaption>
             </figure>
@@ -227,12 +200,25 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* M.E.S.O. ACADEMY: riga per i colleghi, non per i pazienti */}
+      <section id="eventi" className="mx-auto max-w-[1320px] px-6 pb-24 lg:px-10">
+        <div className="flex flex-wrap items-center justify-between gap-4 border-t border-line pt-8">
+          <p className="text-stone">
+            Sei un professionista della salute? Corsi e seminari con la{" "}
+            <span className="text-ink">M.E.S.O. Academy</span>.
+          </p>
+          <Link href="/meso-academy" className="text-xs font-medium uppercase tracking-widest text-tufo hover:underline">
+            Scopri l&apos;Academy →
+          </Link>
+        </div>
+      </section>
+
       {/* CONTATTI */}
       <section id="contatti" className="px-4 pb-4 lg:px-6 lg:pb-6">
         <div className="relative overflow-hidden rounded-[2.5rem] bg-tufo px-6 py-20 text-paper lg:px-16">
           <div className="grid gap-14 lg:grid-cols-12">
             <div className="lg:col-span-6">
-              <div className="flex items-center gap-3 text-[11.5px] font-medium uppercase tracking-[0.18em] text-paper/70">
+              <div className="flex items-center gap-3 text-[13px] sm:text-[11.5px] font-medium uppercase tracking-[0.18em] text-paper/70">
                 <span className="h-px w-8 bg-paper/40" />
                 Contatti
               </div>
@@ -264,7 +250,7 @@ export default function HomePage() {
                   href="/contatti"
                   className="group flex flex-col justify-between rounded-3xl bg-paper/10 p-7 transition hover:bg-paper/20"
                 >
-                  <span className="text-[11.5px] font-medium uppercase tracking-widest text-paper/70">Studio</span>
+                  <span className="text-[13px] sm:text-[11.5px] font-medium uppercase tracking-widest text-paper/70">Studio</span>
                   <span className="mt-20">
                     <span className="block font-display text-4xl">{citta}</span>
                     <span className="mt-1 block text-paper/80">{indirizzo}</span>

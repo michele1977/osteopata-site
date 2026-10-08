@@ -93,7 +93,7 @@ export default function MesoAcademyPage() {
           {acronimo.map(([lettera, parola]) => (
             <div key={lettera} className="py-12 md:px-8 md:first:pl-0">
               <div className="font-display text-6xl font-light text-sand">{lettera}</div>
-              <div className="mt-2 text-[11.5px] font-medium uppercase tracking-[0.18em] text-paper/75">
+              <div className="mt-2 text-[13px] sm:text-[11.5px] font-medium uppercase tracking-[0.18em] text-paper/75">
                 {parola}
               </div>
             </div>
