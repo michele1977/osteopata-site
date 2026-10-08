@@ -1,20 +1,19 @@
 import Link from "next/link";
-import { CONTACT_INFO } from "@/lib/constants";
+import { CONTACT_INFO, WHATSAPP_URL } from "@/lib/constants";
+import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
 
 type CallBandProps = {
   title?: React.ReactNode;
   text?: string;
 };
 
-const tel = `tel:${CONTACT_INFO.phone.replace(/\s/g, "")}`;
-
-// Chiusura delle pagine interne: invito a telefonare, come in home.
+// Chiusura delle pagine interne: invito a scrivere su WhatsApp, come in home.
 export default function CallBand({
   title = (
     <>
       Parliamone
       <br />
-      <em>al telefono.</em>
+      <em>su WhatsApp.</em>
     </>
   ),
   text = "Raccontami il tuo problema: ti rispondo personalmente e troviamo insieme il momento giusto per vederci.",
@@ -28,12 +27,16 @@ export default function CallBand({
           </h2>
           <div className="lg:col-span-5">
             <p className="max-w-md leading-relaxed text-paper/85">{text}</p>
+            <p className="mt-4 text-sm text-paper/70">Tel. {CONTACT_INFO.phone}</p>
             <div className="mt-8 flex flex-wrap items-center gap-6">
-              <a
-                href={tel}
-                className="rounded-full bg-paper px-7 py-4 text-ink transition hover:bg-ink hover:text-paper"
+<a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 rounded-full bg-paper px-7 py-4 text-ink transition hover:bg-ink hover:text-paper"
               >
-                {CONTACT_INFO.phone}
+                <WhatsAppIcon />
+                Scrivimi su WhatsApp
               </a>
               <Link href="/contatti" className="text-sm text-paper/80 underline-offset-4 hover:text-paper hover:underline">
                 Sedi e indicazioni →

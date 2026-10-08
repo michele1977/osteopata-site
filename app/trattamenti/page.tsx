@@ -187,7 +187,7 @@ export default function TrattamentiPage() {
         <p className="mt-6 border-t border-line pt-8 text-stone">
           Non trovi il tuo problema?{" "}
           <Link href="/contatti" className="text-tufo underline-offset-4 hover:underline">
-            Chiamami per un confronto
+            Scrivimi per un confronto
           </Link>
           .
         </p>

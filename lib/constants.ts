@@ -20,6 +20,11 @@ export const CONTACT_INFO = {
   addressPozzuoli: "Via Montenuovo Licola Patria 138, Pozzuoli (NA)",
 } as const;
 
+// Il contatto passa da WhatsApp; il numero sul sito è solo informativo.
+export const WHATSAPP_URL = `https://wa.me/${CONTACT_INFO.phone.replace(/\D/g, "")}?text=${encodeURIComponent(
+  "Buongiorno Dottore, vorrei avere informazioni per un appuntamento.",
+)}`;
+
 export const SOCIAL_LINKS = {
   instagram: "https://www.instagram.com/dott_robertotrupiano_osteopata/",
   facebook: "https://www.facebook.com/osteopatarobertotrupiano",

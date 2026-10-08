@@ -103,7 +103,7 @@ export default function PrimaVisitaPage() {
 
       <CallBand
         title={<>Vuoi fissare<br /><em>la prima visita?</em></>}
-        text="Chiamami: ti rispondo personalmente e troviamo insieme il giorno più comodo per te."
+        text="Scrivimi su WhatsApp: ti rispondo personalmente e troviamo insieme il giorno più comodo per te."
       />
     </>
   );

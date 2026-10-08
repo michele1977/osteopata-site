@@ -3,7 +3,8 @@ import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import PageHero from "@/components/ui/PageHero";
 import MapEmbed from "@/components/ui/MapEmbed";
-import { CONTACT_INFO } from "@/lib/constants";
+import { CONTACT_INFO, WHATSAPP_URL } from "@/lib/constants";
+import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
 
 export const metadata: Metadata = {
   title: "Contatti",
@@ -11,7 +12,6 @@ export const metadata: Metadata = {
     "Contatta lo studio del Dott. Trupiano per fissare una visita osteopatica a Napoli o Pozzuoli.",
 };
 
-const tel = `tel:${CONTACT_INFO.phone.replace(/\s/g, "")}`;
 
 const sedi = [
   { citta: "Napoli", indirizzo: CONTACT_INFO.address },
@@ -30,12 +30,12 @@ export default function ContattiPage() {
           <>
             Parliamone
             <br />
-            <em>al telefono.</em>
+            <em>su WhatsApp.</em>
           </>
         }
         intro={
           <p>
-            Chiamami per informazioni o per fissare un appuntamento: rispondo personalmente e
+            Scrivimi su WhatsApp per informazioni o per fissare un appuntamento: rispondo personalmente e
             troviamo insieme il giorno pi&ugrave; comodo. Ricevo solo su appuntamento.
           </p>
         }
@@ -46,9 +46,9 @@ export default function ContattiPage() {
                 Telefono
               </dt>
               <dd className="mt-2">
-                <a href={tel} className="whitespace-nowrap font-display text-3xl font-light transition hover:text-tufo sm:text-4xl">
+                <span className="whitespace-nowrap font-display text-3xl font-light sm:text-4xl">
                   {CONTACT_INFO.phone}
-                </a>
+                </span>
               </dd>
             </div>
             <div className="mt-6 border-t border-line pt-6">
@@ -63,10 +63,13 @@ export default function ContattiPage() {
               </dd>
             </div>
             <a
-              href={tel}
-              className="mt-8 block rounded-full bg-ink px-7 py-4 text-center text-paper transition hover:bg-tufo"
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 flex items-center justify-center gap-2 rounded-full bg-ink px-7 py-4 text-paper transition hover:bg-tufo"
             >
-              Chiama ora
+              <WhatsAppIcon />
+              Scrivimi su WhatsApp
             </a>
           </dl>
         }

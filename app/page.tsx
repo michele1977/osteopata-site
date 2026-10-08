@@ -3,7 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Triangolo from "@/components/home/Triangolo";
 import Disturbi from "@/components/home/Disturbi";
-import { CONTACT_INFO, MIODOTTORE_URL } from "@/lib/constants";
+import { CONTACT_INFO, MIODOTTORE_URL, WHATSAPP_URL } from "@/lib/constants";
+import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
 import { RECENSIONI } from "@/lib/recensioni";
 import { FORMAZIONE } from "@/lib/formazione";
 
@@ -13,7 +14,6 @@ export const metadata: Metadata = {
     "Roberto Trupiano, osteopata a Napoli e Pozzuoli. Trattamenti personalizzati per cervicale, mal di schiena, postura e dolori articolari, con approccio orientato alla causa del problema.",
 };
 
-const tel = `tel:${CONTACT_INFO.phone.replace(/\s/g, "")}`;
 const phoneShort = CONTACT_INFO.phone.replace(/^\+39\s*/, "");
 // Anni dal diploma D.O. (2013), ricalcolati a ogni build.
 const anniPratica = new Date().getFullYear() - 2013;
@@ -70,12 +70,7 @@ export default function HomePage() {
               <div>
                 <dt className="text-[11.5px] font-medium uppercase tracking-[0.18em] text-stone">Telefono</dt>
                 <dd className="mt-0.5">
-                  <a
-                    href={tel}
-                    className="font-display text-xl underline decoration-transparent underline-offset-4 transition hover:text-tufo hover:decoration-tufo"
-                  >
-                    {phoneShort}
-                  </a>
+                  <span className="font-display text-xl">{phoneShort}</span>
                 </dd>
               </div>
               <div className="border-l border-ink/15 pl-6">
@@ -244,14 +239,21 @@ export default function HomePage() {
               <h2 className="mt-6 font-display text-6xl font-light leading-[0.95] tracking-tight md:text-7xl">
                 Parliamone
                 <br />
-                <em>al telefono.</em>
+                <em>su WhatsApp.</em>
               </h2>
               <div className="mt-10 flex flex-wrap gap-4">
-                <a href={tel} className="rounded-full bg-paper px-7 py-4 text-ink transition hover:bg-ink hover:text-paper">
-                  {CONTACT_INFO.phone}
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 rounded-full bg-paper px-7 py-4 text-ink transition hover:bg-ink hover:text-paper"
+                >
+                  <WhatsAppIcon />
+                  Scrivimi su WhatsApp
                 </a>
               </div>
-              <a href={`mailto:${CONTACT_INFO.email}`} className="mt-6 block text-paper/80 hover:text-paper">
+              <p className="mt-6 text-paper/80">Tel. {CONTACT_INFO.phone}</p>
+              <a href={`mailto:${CONTACT_INFO.email}`} className="mt-2 block text-paper/80 hover:text-paper">
                 {CONTACT_INFO.email}
               </a>
             </div>

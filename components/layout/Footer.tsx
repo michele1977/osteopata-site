@@ -79,7 +79,7 @@ export default function Footer() {
             <ul className="mt-3 space-y-2 text-sm text-paper/70">
               <li>
                 <span className="text-paper">Tel:</span>{" "}
-                <a href={`tel:${CONTACT_INFO.phone.replace(/\s/g, "")}`} className="hover:text-[#e08a68]">{CONTACT_INFO.phone}</a>
+                {CONTACT_INFO.phone}
               </li>
               <li>
                 <span className="text-paper">Email:</span>{" "}
