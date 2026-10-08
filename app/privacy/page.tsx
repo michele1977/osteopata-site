@@ -30,12 +30,12 @@ export default function PrivacyPage() {
       <h2>Quali dati raccogliamo</h2>
       <ul>
         <li>
-          <strong>Dati che ci invii tu</strong>: nome, numero di telefono e
-          il testo del messaggio inviato con il modulo contatti, oppure i
-          dati che ci comunichi via telefono, WhatsApp o email.
+          <strong>Dati che ci comunichi tu</strong>: nome, numero di telefono,
+          indirizzo email e quanto ci racconti quando chiami o scrivi allo
+          studio. Il sito non ha moduli di contatto.
         </li>
         <li>
-          <strong>Dati sulla salute</strong>: se nel messaggio descrivi
+          <strong>Dati sulla salute</strong>: se al telefono o via email descrivi
           sintomi o disturbi, questi sono dati particolari (art. 9 GDPR).
           Ti chiediamo di indicare solo quanto serve per fissare un
           appuntamento.
@@ -53,9 +53,9 @@ export default function PrivacyPage() {
         <li>
           Per rispondere alle tue richieste e fissare un appuntamento: la base
           giuridica sono le misure precontrattuali richieste da te (art. 6.1.b
-          GDPR) e, per gli eventuali dati sulla salute, il tuo consenso
-          esplicito (art. 9.2.a GDPR), che dai spuntando la casella nel
-          modulo.
+          GDPR) e, per gli eventuali dati sulla salute, la finalit&agrave; di
+          cura da parte di un professionista sanitario tenuto al segreto
+          professionale (art. 9.2.h e 9.3 GDPR).
         </li>
         <li>
           Per garantire il funzionamento e la sicurezza del sito: legittimo

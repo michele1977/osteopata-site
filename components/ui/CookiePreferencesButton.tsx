@@ -7,7 +7,7 @@ export default function CookiePreferencesButton() {
     <button
       type="button"
       onClick={() => setConsent("unset")}
-      className="hover:text-teal-700 transition-colors"
+      className="hover:text-tufo transition-colors"
     >
       Preferenze cookie
     </button>

@@ -1,5 +1,48 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-sans: var(--font-inter);
+  --font-sans: var(--font-instrument);
+  --font-display: var(--font-newsreader);
+  --font-mono: var(--font-instrument);
+}
+
+@theme {
+  --color-bone: #efeae1;
+  --color-paper: #f7f4ee;
+  --color-ink: #13201e;
+  --color-sea: #1f3d3a;
+  --color-stone: #50544e;
+  --color-tufo: #b8532f;
+  --color-teal: #2a7f7a;
+  --color-line: #13201e1f;
+  --color-sand: #e8c9b6;
+
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-size: 106.25%;
+  }
+  body {
+    @apply bg-bone text-ink;
+  }
+  ::selection {
+    background: var(--color-tufo);
+    color: var(--color-paper);
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 300;
+    letter-spacing: -0.01em;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
 }
