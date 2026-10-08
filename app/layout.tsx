@@ -4,7 +4,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import CookieBanner from "@/components/ui/CookieBanner";
-import { SITE_NAME, SITE_DESCRIPTION } from "@/lib/constants";
+import { SITE_NAME, SITE_DESCRIPTION, SITE_URL } from "@/lib/constants";
 
 const instrument = Instrument_Sans({
   variable: "--font-instrument",
@@ -24,6 +24,14 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
+  metadataBase: new URL(SITE_URL),
+  openGraph: {
+    type: "website",
+    locale: "it_IT",
+    siteName: SITE_NAME,
+    title: "Roberto Trupiano, osteopata a Napoli e Pozzuoli",
+    description: SITE_DESCRIPTION,
+  },
 };
 
 export default function RootLayout({

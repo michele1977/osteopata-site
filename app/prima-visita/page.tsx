@@ -36,7 +36,7 @@ const fasi = [
 const infoPratiche = [
   { titolo: "Durata", testo: "La prima visita dura circa 45-60 minuti. Le sedute successive sono più brevi (30-40 minuti)." },
   { titolo: "Cosa portare", testo: "Eventuali esami (radiografie, risonanze, analisi) e un abbigliamento comodo. Non serve impegnativa medica." },
-  { titolo: "Solo su appuntamento", testo: "Le visite si svolgono esclusivamente su appuntamento. Per fissare un appuntamento basta una telefonata." },
+  { titolo: "Solo su appuntamento", testo: "Le visite si svolgono esclusivamente su appuntamento. Per fissare un appuntamento basta un messaggio su WhatsApp." },
 ];
 
 export default function PrimaVisitaPage() {

@@ -1,7 +1,11 @@
 export const SITE_NAME = "Dott. Trupiano Osteopata";
 export const SITE_DESCRIPTION =
   "Studio di Osteopatia a Napoli e Pozzuoli. Trattamenti per cervicale, mal di schiena, cefalea, dolori articolari e postura.";
-export const SITE_URL = "https://www.trupianoosteopata.it";
+// Indirizzo pubblico del sito: su Vercel è il dominio di produzione (vercel.app
+// finché non se ne collega uno proprio), in locale localhost.
+export const SITE_URL = process.env.VERCEL_PROJECT_PRODUCTION_URL
+  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  : "http://localhost:3000";
 
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
