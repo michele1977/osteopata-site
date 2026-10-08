@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useSyncExternalStore } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { CONTACT_INFO, NAV_LINKS } from "@/lib/constants";
@@ -11,12 +11,30 @@ import Container from "@/components/ui/Container";
 const tel = `tel:${CONTACT_INFO.phone.replace(/\s/g, "")}`;
 const phoneShort = CONTACT_INFO.phone.replace(/^\+39\s*/, "");
 
+function subscribeToScroll(callback: () => void) {
+  window.addEventListener("scroll", callback, { passive: true });
+  return () => window.removeEventListener("scroll", callback);
+}
+
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
+  // In cima alla pagina l'header si fonde con lo sfondo; scorrendo si stacca.
+  const scrolled = useSyncExternalStore(
+    subscribeToScroll,
+    () => window.scrollY > 8,
+    () => false,
+  );
+  const raised = scrolled || menuOpen;
 
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-bone/85 backdrop-blur-md">
+    <header
+      className={`sticky top-0 z-50 border-b transition-[background-color,border-color,box-shadow] duration-300 ${
+        raised
+          ? "border-line bg-bone/95 shadow-[0_10px_30px_-18px_rgba(19,32,30,0.45)] backdrop-blur-md"
+          : "border-transparent bg-transparent"
+      }`}
+    >
       <Container className="flex h-[4.5rem] items-center gap-2 md:gap-10">
         {/* Logo */}
         <Link href="/" className="min-w-0 shrink transition-opacity duration-200 hover:opacity-80">
