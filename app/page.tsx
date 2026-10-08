@@ -37,8 +37,8 @@ function Label({ n, children }: { n: string; children: React.ReactNode }) {
 export default function HomePage() {
   return (
     <>
-      {/* HERO */}
-      <section className="relative overflow-hidden">
+      {/* HERO: il margine negativo fa scorrere lo sfondo sotto l'header trasparente */}
+      <section className="relative -mt-[calc(4.5rem+1px)] overflow-hidden pt-[calc(4.5rem+1px)]">
         <div
           className="pointer-events-none absolute inset-0 opacity-70"
           style={{

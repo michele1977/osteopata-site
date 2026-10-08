@@ -9,9 +9,10 @@ type PageHeroProps = {
 };
 
 // Testata delle pagine interne: stesso linguaggio dell'hero della home.
+// Il margine negativo fa scorrere lo sfondo sotto l'header trasparente.
 export default function PageHero({ eyebrow, title, intro, aside }: PageHeroProps) {
   return (
-    <section className="relative overflow-hidden border-b border-line">
+    <section className="relative -mt-[calc(4.5rem+1px)] overflow-hidden border-b border-line pt-[calc(4.5rem+1px)]">
       <div
         className="pointer-events-none absolute inset-0 opacity-70"
         style={{
