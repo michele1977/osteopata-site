@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import Link from "next/link";
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -61,6 +62,23 @@ export default function ContactForm() {
           className="mt-1 block w-full rounded-lg border border-zinc-300 px-3 py-2.5 text-sm text-zinc-900 shadow-sm placeholder:text-zinc-400 focus:border-teal-500 focus:ring-1 focus:ring-teal-500"
           placeholder="Descrivi brevemente il motivo del contatto"
         />
+      </div>
+      <div className="flex items-start gap-3">
+        <input
+          id="privacy"
+          name="privacy"
+          type="checkbox"
+          required
+          className="mt-0.5 h-4 w-4 shrink-0 rounded border-zinc-300 text-teal-700 focus:ring-teal-500"
+        />
+        <label htmlFor="privacy" className="text-xs leading-relaxed text-zinc-500">
+          Ho letto l&rsquo;
+          <Link href="/privacy" className="font-medium text-teal-700 underline underline-offset-2">
+            informativa privacy
+          </Link>{" "}
+          e acconsento al trattamento dei miei dati, compresi quelli sulla
+          salute eventualmente indicati nel messaggio, per essere ricontattato.
+        </label>
       </div>
       <button
         type="submit"

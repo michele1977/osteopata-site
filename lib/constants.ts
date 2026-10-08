@@ -31,3 +31,9 @@ export const MIODOTTORE_URL =
 // TODO: copiare il PDF in public/ prima di dismettere il vecchio dominio.
 export const CURRICULUM_URL =
   "https://osteopatatrupiano.it/wp-content/uploads/2025/05/Curriculum.pdf";
+
+export const LEGAL_INFO = {
+  titolare: "Dott. Roberto Trupiano",
+  piva: "08253431210",
+  sede: "Via Mergellina 220, 80122 Napoli",
+} as const;

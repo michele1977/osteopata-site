@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import { CONTACT_INFO } from "@/lib/constants";
+import MapEmbed from "@/components/ui/MapEmbed";
 import ContactForm from "./ContactForm";
 
 export const metadata: Metadata = {
@@ -163,17 +164,7 @@ export default function ContattiPage() {
               </div>
             </div>
             <div className="overflow-hidden rounded-2xl shadow-lg">
-              <iframe
-                title="Mappa studio Napoli"
-                src="https://www.google.com/maps?q=Via+Mergellina+220,+Napoli&output=embed"
-                width="100%"
-                height="360"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="block w-full"
-              />
+              <MapEmbed title="Mappa studio Napoli" query="Via Mergellina 220, Napoli" />
             </div>
           </div>
 
@@ -202,17 +193,7 @@ export default function ContattiPage() {
               </div>
             </div>
             <div className="overflow-hidden rounded-2xl shadow-lg">
-              <iframe
-                title="Mappa studio Pozzuoli"
-                src="https://www.google.com/maps?q=Via+Montenuovo+Licola+Patria+138,+Pozzuoli+(NA)&output=embed"
-                width="100%"
-                height="360"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="block w-full"
-              />
+              <MapEmbed title="Mappa studio Pozzuoli" query="Via Montenuovo Licola Patria 138, Pozzuoli (NA)" />
             </div>
           </div>
         </Container>

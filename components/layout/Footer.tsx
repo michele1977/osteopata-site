@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { NAV_LINKS, SITE_NAME, CONTACT_INFO, SOCIAL_LINKS } from "@/lib/constants";
+import { NAV_LINKS, SITE_NAME, CONTACT_INFO, SOCIAL_LINKS, LEGAL_INFO } from "@/lib/constants";
 import Container from "@/components/ui/Container";
 
 export default function Footer() {
@@ -92,8 +92,19 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 border-t border-zinc-200 pt-6 text-center text-xs text-zinc-400">
-          © {new Date().getFullYear()} {SITE_NAME}. Tutti i diritti riservati.
+        <div className="mt-10 flex flex-col items-center gap-2 border-t border-zinc-200 pt-6 text-center text-xs text-zinc-400 sm:flex-row sm:justify-between sm:text-left">
+          <p>
+            © {new Date().getFullYear()} {SITE_NAME} &middot; P.IVA{" "}
+            {LEGAL_INFO.piva}. Tutti i diritti riservati.
+          </p>
+          <div className="flex gap-4">
+            <Link href="/privacy" className="hover:text-teal-700 transition-colors">
+              Privacy
+            </Link>
+            <Link href="/cookie-policy" className="hover:text-teal-700 transition-colors">
+              Cookie policy
+            </Link>
+          </div>
         </div>
       </Container>
     </footer>
