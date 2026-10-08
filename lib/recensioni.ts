@@ -47,4 +47,6 @@ export const RECENSIONI: {
   },
 ];
 
+// Dati del profilo MioDottore, verificati l'8 ottobre 2026: da aggiornare a mano.
 export const NUMERO_RECENSIONI_MIODOTTORE = 90;
+export const VALUTAZIONE_MIODOTTORE = "5,0";

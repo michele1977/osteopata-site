@@ -3,7 +3,11 @@ import Container from "@/components/ui/Container";
 import PageHero from "@/components/ui/PageHero";
 import CallBand from "@/components/ui/CallBand";
 import { MIODOTTORE_URL } from "@/lib/constants";
-import { RECENSIONI, NUMERO_RECENSIONI_MIODOTTORE } from "@/lib/recensioni";
+import {
+  RECENSIONI,
+  NUMERO_RECENSIONI_MIODOTTORE,
+  VALUTAZIONE_MIODOTTORE,
+} from "@/lib/recensioni";
 
 export const metadata: Metadata = {
   title: "Recensioni",
@@ -26,7 +30,8 @@ export default function RecensioniPage() {
         intro={
           <p>
             Le esperienze di chi si &egrave; affidato al Dott. Trupiano. Su MioDottore trovi{" "}
-            {NUMERO_RECENSIONI_MIODOTTORE} recensioni lasciate dai pazienti dopo la visita.
+            {NUMERO_RECENSIONI_MIODOTTORE} recensioni lasciate dai pazienti dopo la visita, con
+            una valutazione media di {VALUTAZIONE_MIODOTTORE} su 5.
           </p>
         }
       />

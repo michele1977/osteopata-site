@@ -5,7 +5,11 @@ import Triangolo from "@/components/home/Triangolo";
 import Disturbi from "@/components/home/Disturbi";
 import { CONTACT_INFO, MIODOTTORE_URL, WHATSAPP_URL } from "@/lib/constants";
 import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
-import { RECENSIONI, NUMERO_RECENSIONI_MIODOTTORE } from "@/lib/recensioni";
+import {
+  RECENSIONI,
+  NUMERO_RECENSIONI_MIODOTTORE,
+  VALUTAZIONE_MIODOTTORE,
+} from "@/lib/recensioni";
 import { FORMAZIONE } from "@/lib/formazione";
 
 export const metadata: Metadata = {
@@ -115,7 +119,7 @@ export default function HomePage() {
               ["D.O.", "A.T. Still Academy"],
               ["+100", "corsi post-graduate"],
               ["R.O.I.", "Registro Osteopati"],
-              ["2", "studi in Campania"],
+              [`${VALUTAZIONE_MIODOTTORE} su 5`, `${NUMERO_RECENSIONI_MIODOTTORE} recensioni MioDottore`],
             ].map(([a, b]) => (
               <div key={b} className="px-4 py-6 first:pl-0">
                 <div className="font-display text-2xl">{a}</div>
@@ -173,9 +177,19 @@ export default function HomePage() {
       {/* RECENSIONI */}
       <section className="mx-auto max-w-[1320px] px-6 py-28 lg:px-10">
         <Label>Dicono di me</Label>
-        <p className="mt-6 font-display text-3xl font-light md:text-4xl">
-          <span className="text-tufo">{NUMERO_RECENSIONI_MIODOTTORE}</span> recensioni di pazienti su MioDottore
-        </p>
+        <div className="mt-8 flex flex-wrap items-end gap-x-6 gap-y-2">
+          <span className="font-display text-7xl font-light leading-none md:text-8xl">
+            {VALUTAZIONE_MIODOTTORE}
+          </span>
+          <div className="pb-2">
+            <div className="text-xl tracking-[0.2em] text-tufo" aria-hidden="true">
+              ★★★★★
+            </div>
+            <p className="mt-1 text-ink/85">
+              su 5, da {NUMERO_RECENSIONI_MIODOTTORE} recensioni di pazienti su MioDottore
+            </p>
+          </div>
+        </div>
         <div className="mt-10 grid gap-10 md:grid-cols-3">
           {RECENSIONI.slice(0, 3).map((r) => (
             <figure key={r.nome + r.data} className="border-t border-line pt-6">
