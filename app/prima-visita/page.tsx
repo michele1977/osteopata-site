@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import PageHero from "@/components/ui/PageHero";
@@ -88,7 +89,8 @@ export default function PrimaVisitaPage() {
               Prima di venire in studio.
             </h2>
           </div>
-          <dl className="lg:col-span-8">
+          <div className="lg:col-span-8">
+          <dl>
             {infoPratiche.map((info) => (
               <div key={info.titolo} className="grid gap-2 border-t border-line py-7 sm:grid-cols-3 sm:gap-8">
                 <dt className="text-[13px] sm:text-[11.5px] font-medium uppercase tracking-[0.18em] text-stone sm:pt-1">
@@ -98,6 +100,12 @@ export default function PrimaVisitaPage() {
               </div>
             ))}
           </dl>
+          <div className="border-t border-line pt-7">
+            <Link href="/domande-frequenti" className="text-xs font-medium uppercase tracking-widest text-tufo hover:underline">
+              Altre domande frequenti →
+            </Link>
+          </div>
+          </div>
         </Container>
       </section>
 

@@ -55,6 +55,11 @@ export default function Footer() {
                 </li>
               ))}
               <li>
+                <Link href="/domande-frequenti" className="text-sm text-paper/70 hover:text-[#e08a68] transition-colors">
+                  Domande frequenti
+                </Link>
+              </li>
+              <li>
                 <Link href="/meso-academy" className="text-sm text-paper/70 hover:text-[#e08a68] transition-colors">
                   M.E.S.O. Academy
                 </Link>
