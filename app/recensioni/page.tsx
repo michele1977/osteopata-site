@@ -39,7 +39,7 @@ export default function RecensioniPage() {
                 &ldquo;{r.testo}&rdquo;
               </blockquote>
               <figcaption className="mt-6 text-[13px] sm:text-[11.5px] font-medium uppercase tracking-[0.18em] text-stone">
-                {r.nome} · {r.visita} · {r.data}
+                {[r.nome, r.visita, r.data].filter(Boolean).join(" · ")}
               </figcaption>
             </figure>
           ))}

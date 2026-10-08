@@ -5,7 +5,7 @@ import Triangolo from "@/components/home/Triangolo";
 import Disturbi from "@/components/home/Disturbi";
 import { CONTACT_INFO, MIODOTTORE_URL, WHATSAPP_URL } from "@/lib/constants";
 import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
-import { RECENSIONI } from "@/lib/recensioni";
+import { RECENSIONI, NUMERO_RECENSIONI_MIODOTTORE } from "@/lib/recensioni";
 import { FORMAZIONE } from "@/lib/formazione";
 
 export const metadata: Metadata = {
@@ -173,6 +173,9 @@ export default function HomePage() {
       {/* RECENSIONI */}
       <section className="mx-auto max-w-[1320px] px-6 py-28 lg:px-10">
         <Label>Dicono di me</Label>
+        <p className="mt-6 font-display text-3xl font-light md:text-4xl">
+          <span className="text-tufo">{NUMERO_RECENSIONI_MIODOTTORE}</span> recensioni di pazienti su MioDottore
+        </p>
         <div className="mt-10 grid gap-10 md:grid-cols-3">
           {RECENSIONI.slice(0, 3).map((r) => (
             <figure key={r.nome + r.data} className="border-t border-line pt-6">
