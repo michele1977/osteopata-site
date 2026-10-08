@@ -14,9 +14,9 @@ export default function CookiePolicyPage() {
     <LegalPage title="Cookie policy" updated="8 ottobre 2026">
       <p>
         I cookie sono piccoli file che un sito salva sul tuo dispositivo.
-        Questo sito &egrave; stato pensato per usarne il meno possibile: non
-        usa cookie di profilazione, di statistica o pubblicitari, e per
-        questo non ti mostra un banner all&rsquo;apertura.
+        Questo sito non usa cookie di profilazione, di statistica o
+        pubblicitari. Al primo accesso un banner ti chiede se accettare i
+        cookie di Google Maps, usati solo per mostrare le mappe delle sedi.
       </p>
 
       <h2>Cookie tecnici</h2>
@@ -30,12 +30,13 @@ export default function CookiePolicyPage() {
       <h2>Contenuti di terze parti</h2>
       <ul>
         <li>
-          <strong>Google Maps</strong>: le mappe nella pagina Contatti non
-          vengono caricate automaticamente. Compaiono solo se clicchi su
-          &ldquo;Mostra la mappa&rdquo;: in quel momento Google pu&ograve;
-          installare i propri cookie e raccogliere dati come
-          l&rsquo;indirizzo IP. Il clic vale come consenso per quella
-          visita. Puoi leggere l&rsquo;
+          <strong>Google Maps</strong>: le mappe nella pagina Contatti si
+          caricano solo se clicchi &ldquo;Accetta&rdquo; nel banner. Da quel
+          momento Google pu&ograve; installare i propri cookie e raccogliere
+          dati come l&rsquo;indirizzo IP. Se clicchi &ldquo;Rifiuta&rdquo;
+          le mappe non vengono caricate e puoi comunque aprire le
+          indicazioni con il pulsante &ldquo;Apri su Google Maps&rdquo;.
+          Puoi leggere l&rsquo;
           <a
             href="https://policies.google.com/privacy?hl=it"
             target="_blank"
@@ -53,7 +54,12 @@ export default function CookiePolicyPage() {
         </li>
       </ul>
 
-      <h2>Come gestire i cookie</h2>
+      <h2>Come cambiare la tua scelta</h2>
+      <p>
+        La tua scelta viene ricordata nel browser, cos&igrave; il banner
+        non ricompare a ogni visita. Puoi cambiarla in qualsiasi momento con
+        il link &ldquo;Preferenze cookie&rdquo; in fondo a ogni pagina.
+      </p>
       <p>
         Puoi cancellare o bloccare i cookie dalle impostazioni del tuo
         browser. Bloccare i cookie tecnici pu&ograve; impedire il corretto

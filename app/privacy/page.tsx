@@ -90,7 +90,7 @@ export default function PrivacyPage() {
       <h2>Mappe di Google</h2>
       <p>
         Le mappe nella pagina Contatti sono fornite da Google e vengono
-        caricate solo se scegli di visualizzarle. Da quel momento Google
+        caricate solo se accetti i relativi cookie nel banner. Da quel momento Google
         pu&ograve; raccogliere dati secondo la propria informativa. Maggiori
         dettagli nella <Link href="/cookie-policy">cookie policy</Link>.
       </p>

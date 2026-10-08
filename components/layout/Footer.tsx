@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { NAV_LINKS, SITE_NAME, CONTACT_INFO, SOCIAL_LINKS, LEGAL_INFO } from "@/lib/constants";
 import Container from "@/components/ui/Container";
+import CookiePreferencesButton from "@/components/ui/CookiePreferencesButton";
 
 export default function Footer() {
   return (
@@ -104,6 +105,7 @@ export default function Footer() {
             <Link href="/cookie-policy" className="hover:text-teal-700 transition-colors">
               Cookie policy
             </Link>
+            <CookiePreferencesButton />
           </div>
         </div>
       </Container>
