@@ -5,7 +5,6 @@ import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import PageHero from "@/components/ui/PageHero";
 import CallBand from "@/components/ui/CallBand";
-import { CURRICULUM_URL } from "@/lib/constants";
 import { FORMAZIONE } from "@/lib/formazione";
 
 export const metadata: Metadata = {
@@ -121,14 +120,6 @@ export default function ChiSonoPage() {
               Specializzato nei disturbi cranio-cervico-mandibolari, membro del Registro degli
               Osteopati d&rsquo;Italia (R.O.I.).
             </p>
-            <a
-              href={CURRICULUM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-8 inline-block text-xs font-medium uppercase tracking-widest text-tufo hover:underline"
-            >
-              Scarica il curriculum (PDF) ↓
-            </a>
           </div>
           <ul className="lg:col-span-8">
             {FORMAZIONE.map(([k, v]) => (
