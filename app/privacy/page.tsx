@@ -31,11 +31,13 @@ export default function PrivacyPage() {
       <ul>
         <li>
           <strong>Dati che ci comunichi tu</strong>: nome, numero di telefono,
-          indirizzo email e quanto ci racconti quando chiami o scrivi allo
-          studio. Il sito non ha moduli di contatto.
+          indirizzo email e quanto ci racconti quando scrivi su WhatsApp,
+          chiami o mandi un&rsquo;email allo studio. Il sito non ha moduli di
+          contatto. I messaggi WhatsApp passano dai sistemi di WhatsApp
+          Ireland Limited, che li tratta secondo la propria informativa.
         </li>
         <li>
-          <strong>Dati sulla salute</strong>: se al telefono o via email descrivi
+          <strong>Dati sulla salute</strong>: se su WhatsApp, al telefono o via email descrivi
           sintomi o disturbi, questi sono dati particolari (art. 9 GDPR).
           Ti chiediamo di indicare solo quanto serve per fissare un
           appuntamento.
