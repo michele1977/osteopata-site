@@ -61,7 +61,7 @@ export default function Header() {
         </a>
         <button
           type="button"
-          className="p-2 text-zinc-600 md:hidden"
+          className="p-2 text-stone md:hidden"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-expanded={menuOpen}
           aria-label="Apri menu di navigazione"

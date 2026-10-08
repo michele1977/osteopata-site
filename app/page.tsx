@@ -5,6 +5,7 @@ import Triangolo from "@/components/home/Triangolo";
 import Disturbi from "@/components/home/Disturbi";
 import { CONTACT_INFO, MIODOTTORE_URL } from "@/lib/constants";
 import { RECENSIONI } from "@/lib/recensioni";
+import { FORMAZIONE } from "@/lib/formazione";
 
 export const metadata: Metadata = {
   title: "Roberto Trupiano - Osteopata a Napoli e Pozzuoli",
@@ -17,16 +18,6 @@ const phoneShort = CONTACT_INFO.phone.replace(/^\+39\s*/, "");
 // Anni dal diploma D.O. (2013), ricalcolati a ogni build.
 const anniPratica = new Date().getFullYear() - 2013;
 
-const training = [
-  ["2013", "Diploma D.O. — A.T. Still Academy (ATSAI), 6 anni"],
-  ["—", "I.S.E.F. — anatomia, fisiologia, biomeccanica"],
-  ["II liv.", "Master in Medicina Nutrizionale e Funzionale — Phytoitalia"],
-  ["3 anni", "Biodinamica Cranio-Sacrale Integrale — Istituto Fenice"],
-  ["ATSAI", "Pediatria · ATM e stomatognatico · Somato-emozionale"],
-  ["Barral", "Tecniche di ascolto e catene lesionali"],
-  ["C.I.O.", "Regolazione del sistema nervoso e cefalee"],
-  ["+100", "Corsi post-graduate in Italia e all'estero"],
-];
 
 const studi = [
   { citta: "Napoli", indirizzo: CONTACT_INFO.address },
@@ -168,7 +159,7 @@ export default function HomePage() {
               nutrizione funzionale.
             </p>
             <ul className="mt-12 grid sm:grid-cols-2 sm:gap-x-10">
-              {training.map(([k, v]) => (
+              {FORMAZIONE.map(([k, v]) => (
                 <li key={v} className="flex gap-5 border-t border-line py-4">
                   <span className="w-14 shrink-0 text-xs font-medium text-tufo">{k}</span>
                   <span className="text-[15px] text-ink/85">{v}</span>

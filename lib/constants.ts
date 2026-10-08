@@ -6,6 +6,7 @@ export const SITE_URL = "https://www.trupianoosteopata.it";
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "Chi sono", href: "/chi-sono" },
+  { label: "Come lavoro", href: "/come-lavoro" },
   { label: "Trattamenti", href: "/trattamenti" },
   { label: "Prima visita", href: "/prima-visita" },
   { label: "Recensioni", href: "/recensioni" },
@@ -14,7 +15,7 @@ export const NAV_LINKS = [
 
 export const CONTACT_INFO = {
   phone: "+39 366 463 3858",
-  email: "info@trupianoosteopata.it",
+  email: "doc.trupiano@gmail.com",
   address: "Via Mergellina 220, Napoli",
   addressPozzuoli: "Via Montenuovo Licola Patria 138, Pozzuoli (NA)",
 } as const;
@@ -35,4 +36,10 @@ export const LEGAL_INFO = {
   titolare: "Dott. Roberto Trupiano",
   piva: "08253431210",
   sede: "Via Mergellina 220, 80122 Napoli",
+} as const;
+
+// Contatti della M.E.S.O. Academy, come sul sito osteopatatrupiano.it.
+export const MESO_CONTACT = {
+  phone: "+39 351 992 3924",
+  email: "meso.academy@yahoo.com",
 } as const;

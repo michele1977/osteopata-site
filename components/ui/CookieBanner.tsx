@@ -11,15 +11,15 @@ export default function CookieBanner() {
     <div
       role="dialog"
       aria-label="Consenso cookie"
-      className="fixed inset-x-0 bottom-0 z-[60] border-t border-zinc-200 bg-paper/95 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] backdrop-blur"
+      className="fixed inset-x-0 bottom-0 z-[60] border-t border-line bg-paper/95 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] backdrop-blur"
     >
-      <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-6">
-        <p className="text-sm leading-relaxed text-zinc-600">
+      <div className="mx-auto flex max-w-[1320px] flex-col gap-4 px-6 py-5 sm:flex-row sm:items-center sm:justify-between lg:px-10">
+        <p className="text-sm leading-relaxed text-ink/80">
           Questo sito usa cookie tecnici e, solo con il tuo consenso, i cookie
           di Google Maps per mostrare le mappe delle sedi.{" "}
           <Link
             href="/cookie-policy"
-            className="font-medium text-teal-700 underline underline-offset-2"
+            className="text-tufo underline underline-offset-2"
           >
             Cookie policy
           </Link>
@@ -28,14 +28,14 @@ export default function CookieBanner() {
           <button
             type="button"
             onClick={() => setConsent("rejected")}
-            className="flex-1 rounded-lg px-5 py-2.5 text-sm font-semibold text-teal-700 ring-1 ring-teal-700 transition-colors hover:bg-teal-50 sm:flex-none"
+            className="flex-1 rounded-full px-6 py-2.5 text-sm text-ink ring-1 ring-ink transition-colors hover:bg-ink hover:text-paper sm:flex-none"
           >
             Rifiuta
           </button>
           <button
             type="button"
             onClick={() => setConsent("accepted")}
-            className="flex-1 rounded-lg px-5 py-2.5 text-sm font-semibold text-teal-700 ring-1 ring-teal-700 transition-colors hover:bg-teal-50 sm:flex-none"
+            className="flex-1 rounded-full px-6 py-2.5 text-sm text-ink ring-1 ring-ink transition-colors hover:bg-ink hover:text-paper sm:flex-none"
           >
             Accetta
           </button>

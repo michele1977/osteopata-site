@@ -1,14 +1,22 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Container from "@/components/ui/Container";
-import Button from "@/components/ui/Button";
-import { CONTACT_INFO } from "@/lib/constants";
+import Eyebrow from "@/components/ui/Eyebrow";
+import PageHero from "@/components/ui/PageHero";
+import { MESO_CONTACT } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "M.E.S.O Academy \u2013 Formazione osteopatica a Napoli",
+  title: "M.E.S.O. Academy \u2013 Formazione osteopatica a Napoli",
   description:
-    "Scopri M.E.S.O Academy, associazione dedicata alla formazione avanzata in osteopatia e terapie manuali a Napoli.",
+    "Scopri M.E.S.O. Academy, associazione dedicata alla formazione avanzata in osteopatia e terapie manuali a Napoli.",
 };
+
+const acronimo = [
+  ["M", "Metabolico"],
+  ["E", "Emozionale"],
+  ["S", "Strutturale"],
+  ["O", "Occlusale"],
+];
 
 const ambiti = [
   {
@@ -49,128 +57,106 @@ const valori = [
 export default function MesoAcademyPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="bg-gradient-to-b from-teal-50 to-white py-14 sm:py-20">
-        <Container className="max-w-3xl text-center">
-          <Image
-            src="/meso-logo.png"
-            alt="Logo M.E.S.O Academy"
-            width={160}
-            height={160}
-            className="mx-auto h-auto w-[140px] object-contain sm:w-[160px]"
-            priority
-          />
-          <h1 className="mt-6 text-4xl font-light font-display tracking-tight text-zinc-900 sm:text-5xl">
-            Cos&rsquo;&egrave; M.E.S.O Academy
-          </h1>
-          <p className="mt-5 text-lg leading-relaxed text-zinc-600">
-            Associazione culturale dedicata alla formazione avanzata nelle
-            terapie manuali, fondata e presieduta dal Dott. Roberto Trupiano.
+      <PageHero
+        eyebrow="M.E.S.O. Academy"
+        title={
+          <>
+            Formazione
+            <br />
+            <em>&amp; incontri.</em>
+          </>
+        }
+        intro={
+          <p>
+            Associazione culturale dedicata alla formazione avanzata nelle terapie manuali, fondata
+            e presieduta dal Dott. Roberto Trupiano. Organizza corsi, seminari e workshop
+            post-graduate con docenti esperti, con un approccio pratico orientato alla clinica.
           </p>
-        </Container>
-      </section>
-
-      {/* Introduzione */}
-      <section className="py-12 sm:py-16">
-        <Container className="max-w-3xl">
-          <p className="text-base leading-relaxed text-zinc-600">
-            La M.E.S.O Academy nasce con l&rsquo;obiettivo di offrire percorsi
-            formativi post-graduate di alto livello per professionisti del
-            settore osteopatico e delle terapie manuali. L&rsquo;academy
-            organizza corsi, seminari e workshop in collaborazione con docenti
-            esperti, con un approccio pratico orientato alla clinica.
-          </p>
-        </Container>
-      </section>
-
-      {/* Ambiti formativi */}
-      <section className="border-t border-zinc-100 bg-zinc-50 py-12 sm:py-16">
-        <Container>
-          <h2 className="text-center text-3xl font-light font-display tracking-tight text-zinc-900 sm:text-4xl">
-            Ambiti formativi
-          </h2>
-          <div className="mt-10 grid gap-6 sm:grid-cols-3">
-            {ambiti.map((a) => (
-              <div
-                key={a.titolo}
-                className="rounded-xl bg-paper p-6 ring-1 ring-zinc-100"
-              >
-                <h3 className="font-light font-display text-zinc-900">{a.titolo}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-zinc-600">
-                  {a.descrizione}
-                </p>
-              </div>
-            ))}
+        }
+        aside={
+          <div className="flex justify-center lg:justify-end">
+            <Image
+              src="/meso-logo.png"
+              alt="Logo M.E.S.O. Academy"
+              width={260}
+              height={260}
+              priority
+              className="h-auto w-44 rounded-full bg-paper p-5 shadow-[0_20px_50px_-20px_rgba(19,32,30,0.35)] sm:w-56"
+            />
           </div>
+        }
+      />
+
+      {/* Acronimo */}
+      <section className="bg-ink text-paper">
+        <Container className="grid grid-cols-2 divide-paper/15 md:grid-cols-4 md:divide-x">
+          {acronimo.map(([lettera, parola]) => (
+            <div key={lettera} className="py-12 md:px-8 md:first:pl-0">
+              <div className="font-display text-6xl font-light text-sand">{lettera}</div>
+              <div className="mt-2 text-[11.5px] font-medium uppercase tracking-[0.18em] text-paper/75">
+                {parola}
+              </div>
+            </div>
+          ))}
         </Container>
       </section>
+
+      {/* Ambiti */}
+      <Container as="section" className="py-24 lg:py-28">
+        <Eyebrow n="01">Ambiti formativi</Eyebrow>
+        <div className="mt-12 grid gap-x-10 md:grid-cols-3">
+          {ambiti.map((a) => (
+            <div key={a.titolo} className="border-t border-line py-8">
+              <h2 className="font-display text-3xl font-light">{a.titolo}</h2>
+              <p className="mt-3 leading-relaxed text-ink/80">{a.descrizione}</p>
+            </div>
+          ))}
+        </div>
+      </Container>
 
       {/* Valori */}
-      <section className="py-12 sm:py-16">
-        <Container>
-          <h2 className="text-center text-3xl font-light font-display tracking-tight text-zinc-900 sm:text-4xl">
-            I nostri valori
-          </h2>
-          <div className="mt-10 grid gap-6 sm:grid-cols-3">
+      <section className="border-t border-line bg-paper">
+        <Container className="py-24 lg:py-28">
+          <Eyebrow n="02">I nostri valori</Eyebrow>
+          <div className="mt-12 grid gap-x-10 md:grid-cols-3">
             {valori.map((v) => (
-              <div key={v.titolo} className="text-center">
-                <h3 className="font-light font-display text-zinc-900">{v.titolo}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-zinc-600">
-                  {v.descrizione}
-                </p>
+              <div key={v.titolo} className="border-t border-line py-8">
+                <h2 className="font-display text-2xl font-light">{v.titolo}</h2>
+                <p className="mt-3 leading-relaxed text-ink/80">{v.descrizione}</p>
               </div>
             ))}
           </div>
         </Container>
       </section>
 
-      {/* Logistica */}
-      <section className="border-t border-zinc-100 bg-zinc-50 py-12 sm:py-16">
-        <Container className="max-w-3xl text-center">
-          <h2 className="text-3xl font-light font-display tracking-tight text-zinc-900 sm:text-4xl">
-            Dove si svolgono i corsi
-          </h2>
-          <p className="mt-4 text-base leading-relaxed text-zinc-600">
-            I corsi della M.E.S.O Academy si svolgono a Napoli, in strutture
-            professionali attrezzate per la formazione pratica e teorica.
-          </p>
-        </Container>
-      </section>
-
-      {/* CTA */}
-      <section className="py-14 sm:py-20">
-        <Container className="max-w-2xl text-center">
-          <h2 className="text-3xl font-light font-display tracking-tight text-zinc-900 sm:text-4xl">
-            Informazioni sui corsi
-          </h2>
-          <p className="mt-4 text-lg leading-relaxed text-zinc-600">
-            Per informazioni sui corsi in programma, contatta la M.E.S.O
-            Academy.
-          </p>
-          <ul className="mt-6 space-y-2 text-sm text-zinc-600">
-            <li>
-              <span className="font-medium text-zinc-900">Email:</span>{" "}
+      {/* Contatti academy */}
+      <section className="px-4 pb-4 lg:px-6 lg:pb-6">
+        <div className="rounded-[2.5rem] bg-sea px-6 py-20 text-paper lg:px-16">
+          <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
+            <div className="lg:col-span-7">
+              <h2 className="font-display text-5xl font-light leading-[0.95] tracking-tight md:text-6xl">
+                Corsi in
+                <br />
+                <em className="text-sand">programma.</em>
+              </h2>
+              <p className="mt-6 max-w-md leading-relaxed text-paper/80">
+                I corsi si svolgono a Napoli. Per date e programmi contatta direttamente
+                l&rsquo;Academy.
+              </p>
+            </div>
+            <div className="flex flex-col gap-4 lg:col-span-5 lg:items-end">
               <a
-                href="mailto:info@mesoacademy.it"
-                className="text-teal-700 underline underline-offset-2 hover:text-teal-800"
+                href={`tel:${MESO_CONTACT.phone.replace(/\s/g, "")}`}
+                className="rounded-full bg-paper px-7 py-4 text-ink transition hover:bg-tufo hover:text-paper"
               >
-                info@mesoacademy.it
+                {MESO_CONTACT.phone}
               </a>
-            </li>
-            <li>
-              <span className="font-medium text-zinc-900">Telefono:</span>{" "}
-              <a
-                href={`tel:${CONTACT_INFO.phone.replace(/\s/g, "")}`}
-                className="text-teal-700 underline underline-offset-2 hover:text-teal-800"
-              >
-                {CONTACT_INFO.phone}
+              <a href={`mailto:${MESO_CONTACT.email}`} className="text-paper/80 hover:text-paper">
+                {MESO_CONTACT.email}
               </a>
-            </li>
-          </ul>
-          <div className="mt-8">
-            <Button href="/contatti">Contatta lo studio</Button>
+            </div>
           </div>
-        </Container>
+        </div>
       </section>
     </>
   );

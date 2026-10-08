@@ -15,30 +15,8 @@
   --color-tufo: #b8532f;
   --color-teal: #2a7f7a;
   --color-line: #13201e1f;
+  --color-sand: #e8c9b6;
 
-  /* Le pagine interne usano teal-* e zinc-*: rimappati sulla nuova palette */
-  --color-teal-50: #f6ece6;
-  --color-teal-100: #eedccf;
-  --color-teal-200: #e0bfa9;
-  --color-teal-300: #d39a7c;
-  --color-teal-400: #c97452;
-  --color-teal-500: #b8532f;
-  --color-teal-600: #b8532f;
-  --color-teal-700: #a2462a;
-  --color-teal-800: #1f3d3a;
-  --color-teal-900: #13201e;
-
-  --color-zinc-50: #f7f4ee;
-  --color-zinc-100: #ebe5da;
-  --color-zinc-200: #ddd5c8;
-  --color-zinc-300: #c4bcae;
-  --color-zinc-400: #8e8f86;
-  --color-zinc-500: #6a6d66;
-  --color-zinc-600: #50544e;
-  --color-zinc-700: #3a403c;
-  --color-zinc-800: #1f2b29;
-  --color-zinc-900: #13201e;
-  --color-gray-200: #13201e1f;
 }
 
 @layer base {

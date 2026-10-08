@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Container from "@/components/ui/Container";
-import SectionTitle from "@/components/ui/SectionTitle";
-import Button from "@/components/ui/Button";
+import Eyebrow from "@/components/ui/Eyebrow";
+import PageHero from "@/components/ui/PageHero";
+import CallBand from "@/components/ui/CallBand";
 
 export const metadata: Metadata = {
   title: "Come lavoro",
@@ -53,62 +55,65 @@ const ambiti = [
 export default function ComeLavoroPage() {
   return (
     <>
-      {/* Intro */}
-      <section className="py-16 sm:py-24">
-        <Container className="max-w-3xl">
-          <h1 className="text-4xl font-light font-display tracking-tight text-zinc-900 sm:text-5xl">
-            Come lavoro
-          </h1>
-          <p className="mt-6 text-lg leading-relaxed text-zinc-600">
-            L&apos;osteopatia è una disciplina manuale che si occupa di
-            disturbi funzionali dell&apos;apparato muscolo-scheletrico.
-            Nel mio studio a Napoli e Pozzuoli applico un metodo basato
-            su ascolto, valutazione accurata e tecniche manuali mirate.
-            Qui ti spiego i principi che guidano ogni trattamento.
+      <PageHero
+        eyebrow="Come lavoro"
+        title={
+          <>
+            Ascolto, valutazione,
+            <br />
+            <em>mani.</em>
+          </>
+        }
+        intro={
+          <p>
+            L&apos;osteopatia &egrave; una disciplina manuale che si occupa di disturbi funzionali
+            dell&apos;apparato muscolo-scheletrico. Qui ti spiego i principi che guidano ogni
+            trattamento nei miei studi di Napoli e Pozzuoli.
           </p>
-        </Container>
-      </section>
+        }
+      />
 
       {/* Principi */}
-      <section className="bg-zinc-50 py-16 sm:py-24">
-        <Container className="max-w-3xl">
-          <SectionTitle
-            title="I principi del mio approccio"
-            centered={false}
-          />
-          <div className="mt-12 space-y-10">
-            {principi.map((p) => (
-              <div key={p.titolo}>
-                <h3 className="text-lg font-light font-display text-zinc-900">
-                  {p.titolo}
-                </h3>
-                <p className="mt-2 text-base leading-relaxed text-zinc-600">
-                  {p.descrizione}
-                </p>
+      <Container as="section" className="grid gap-12 py-24 lg:grid-cols-12 lg:py-28">
+        <div className="lg:col-span-4">
+          <Eyebrow n="01">Principi</Eyebrow>
+          <h2 className="mt-6 font-display text-4xl font-light leading-tight md:text-5xl">
+            I principi del mio approccio.
+          </h2>
+        </div>
+        <ol className="lg:col-span-8">
+          {principi.map((p, i) => (
+            <li key={p.titolo} className="flex gap-6 border-t border-line py-8">
+              <span className="w-8 shrink-0 pt-2 text-xs font-medium text-tufo">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <div>
+                <h3 className="font-display text-2xl font-light md:text-3xl">{p.titolo}</h3>
+                <p className="mt-3 leading-relaxed text-ink/85">{p.descrizione}</p>
               </div>
-            ))}
-          </div>
-        </Container>
-      </section>
+            </li>
+          ))}
+        </ol>
+      </Container>
 
       {/* Triangolo della salute */}
-      <section className="py-16 sm:py-24">
-        <Container className="max-w-3xl">
-          <SectionTitle
-            title="Il triangolo della salute"
-            subtitle="Quando valuto un problema considero tre aspetti che si influenzano a vicenda."
-            centered={false}
-          />
-          <div className="mt-12 grid gap-6 sm:grid-cols-3">
-            {ambiti.map((a) => (
-              <div
-                key={a.titolo}
-                className="rounded-xl border border-zinc-100 bg-paper p-6 shadow-sm"
-              >
-                <h3 className="font-light font-display text-zinc-900">{a.titolo}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-zinc-600">
-                  {a.descrizione}
-                </p>
+      <section className="bg-sea py-24 text-paper lg:py-28">
+        <Container>
+          <Eyebrow n="02" dark>
+            Il metodo
+          </Eyebrow>
+          <h2 className="mt-6 max-w-2xl font-display text-5xl font-light leading-[1.02] tracking-tight md:text-6xl">
+            Il triangolo della salute.
+          </h2>
+          <p className="mt-6 max-w-xl leading-relaxed text-paper/75">
+            Quando valuto un problema considero tre aspetti che si influenzano a vicenda.
+          </p>
+          <div className="mt-14 grid gap-px overflow-hidden rounded-3xl bg-paper/15 md:grid-cols-3">
+            {ambiti.map((a, i) => (
+              <div key={a.titolo} className="bg-sea p-8">
+                <span className="text-xs font-medium text-sand">{["I", "II", "III"][i]}</span>
+                <h3 className="mt-4 font-display text-3xl font-light">{a.titolo}</h3>
+                <p className="mt-4 text-[15px] leading-relaxed text-paper/75">{a.descrizione}</p>
               </div>
             ))}
           </div>
@@ -116,33 +121,35 @@ export default function ComeLavoroPage() {
       </section>
 
       {/* In pratica */}
-      <section className="bg-zinc-50 py-16 sm:py-24">
-        <Container className="max-w-3xl">
-          <SectionTitle
-            title="In pratica, cosa succede?"
-            centered={false}
-          />
-          <p className="mt-6 text-base leading-relaxed text-zinc-600">
-            Alla prima visita mi prendo il tempo necessario per ascoltarti,
-            capire la tua storia e valutare il tuo corpo nel suo insieme.
-            Solo dopo questa fase propongo un piano di lavoro chiaro:
-            quante sedute potrebbero servire, con quale frequenza e quali
-            risultati possiamo attenderci in modo realistico.
+      <Container as="section" className="grid gap-12 py-24 lg:grid-cols-12 lg:py-28">
+        <div className="lg:col-span-4">
+          <Eyebrow n="03">In pratica</Eyebrow>
+          <h2 className="mt-6 font-display text-4xl font-light leading-tight md:text-5xl">
+            Cosa succede in studio.
+          </h2>
+        </div>
+        <div className="space-y-5 text-lg leading-relaxed text-ink/85 lg:col-span-8">
+          <p>
+            Alla prima visita mi prendo il tempo necessario per ascoltarti, capire la tua storia e
+            valutare il tuo corpo nel suo insieme. Solo dopo questa fase propongo un piano di lavoro
+            chiaro: quante sedute potrebbero servire, con quale frequenza e quali risultati possiamo
+            attenderci in modo realistico.
           </p>
-          <p className="mt-4 text-base leading-relaxed text-zinc-600">
-            Durante il trattamento utilizzo tecniche manuali dolci e
-            specifiche, adattate alla tua condizione. Ti spiego sempre
-            cosa faccio e perché, così puoi seguire il percorso con
-            consapevolezza.
+          <p>
+            Durante il trattamento utilizzo tecniche manuali dolci e specifiche, adattate alla tua
+            condizione. Ti spiego sempre cosa faccio e perch&eacute;, cos&igrave; puoi seguire il
+            percorso con consapevolezza.
           </p>
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-            <Button href="/prima-visita">Come funziona la prima visita</Button>
-            <Button href="/contatti" variant="secondary">
-              Contatta lo studio
-            </Button>
-          </div>
-        </Container>
-      </section>
+          <Link
+            href="/prima-visita"
+            className="!mt-10 inline-block rounded-full px-7 py-4 text-base ring-1 ring-ink/25 transition hover:ring-ink"
+          >
+            Come funziona la prima visita →
+          </Link>
+        </div>
+      </Container>
+
+      <CallBand />
     </>
   );
 }
