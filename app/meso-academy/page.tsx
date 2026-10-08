@@ -146,14 +146,14 @@ export default function MesoAcademyPage() {
             </div>
             <div className="flex flex-col gap-4 lg:col-span-5 lg:items-end">
               <a
-                href={`tel:${MESO_CONTACT.phone.replace(/\s/g, "")}`}
+                href={`mailto:${MESO_CONTACT.email}`}
                 className="rounded-full bg-paper px-7 py-4 text-ink transition hover:bg-tufo hover:text-paper"
               >
-                {MESO_CONTACT.phone}
+                Scrivi all&rsquo;Academy
               </a>
-              <a href={`mailto:${MESO_CONTACT.email}`} className="text-paper/80 hover:text-paper">
-                {MESO_CONTACT.email}
-              </a>
+              <p className="text-paper/80">
+                {MESO_CONTACT.email} &middot; Tel. {MESO_CONTACT.phone}
+              </p>
             </div>
           </div>
         </div>
