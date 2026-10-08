@@ -34,16 +34,16 @@ export default function Header() {
           : "border-transparent bg-transparent"
       }`}
     >
-      <Container className="flex h-[4.5rem] items-center gap-2 xl:gap-10">
+      <Container className="flex h-[4.5rem] items-center gap-2 lg:gap-10">
         {/* Logo */}
         <Link href="/" className="min-w-0 shrink transition-opacity duration-200 hover:opacity-80">
           <Logo />
         </Link>
 
         {/* Desktop nav + CTA */}
-        <div className="hidden flex-1 items-center justify-end gap-8 xl:flex">
+        <div className="hidden flex-1 items-center justify-end gap-8 lg:flex">
           <nav className="flex gap-6 whitespace-nowrap" aria-label="Navigazione principale">
-            {NAV_LINKS.map((link) => (
+            {NAV_LINKS.filter((link) => link.href !== "/").map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
@@ -74,14 +74,14 @@ export default function Header() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Scrivi allo studio su WhatsApp"
-          className="ml-auto flex h-10 shrink-0 items-center justify-center gap-2 rounded-full bg-ink px-3 text-sm font-medium text-paper transition-colors hover:bg-tufo sm:px-4 xl:hidden"
+          className="ml-auto flex h-10 shrink-0 items-center justify-center gap-2 rounded-full bg-ink px-3 text-sm font-medium text-paper transition-colors hover:bg-tufo sm:px-4 lg:hidden"
         >
           <WhatsAppIcon />
           <span className="hidden sm:inline">WhatsApp</span>
         </a>
         <button
           type="button"
-          className="p-2 text-stone xl:hidden"
+          className="p-2 text-stone lg:hidden"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-expanded={menuOpen}
           aria-label="Apri menu di navigazione"
@@ -104,7 +104,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <nav className="border-t border-line bg-bone xl:hidden" aria-label="Navigazione mobile">
+        <nav className="border-t border-line bg-bone lg:hidden" aria-label="Navigazione mobile">
           <Container className="flex flex-col gap-4 py-4">
             {NAV_LINKS.map((link) => (
               <Link
