@@ -62,6 +62,10 @@ export default function ContactForm() {
           className="mt-1 block w-full rounded-lg border border-zinc-300 px-3 py-2.5 text-sm text-zinc-900 shadow-sm placeholder:text-zinc-400 focus:border-teal-500 focus:ring-1 focus:ring-teal-500"
           placeholder="Descrivi brevemente il motivo del contatto"
         />
+        <p className="mt-1.5 text-xs text-zinc-400">
+          Non serve descrivere sintomi o dati clinici nel dettaglio: ne
+          parliamo durante la visita.
+        </p>
       </div>
       <div className="flex items-start gap-3">
         <input
