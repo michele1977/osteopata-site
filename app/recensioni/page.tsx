@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Container from "@/components/ui/Container";
 import PageHero from "@/components/ui/PageHero";
+import HeroPhoto from "@/components/ui/HeroPhoto";
 import CallBand from "@/components/ui/CallBand";
 import { MIODOTTORE_URL } from "@/lib/constants";
 import {
@@ -33,6 +34,14 @@ export default function RecensioniPage() {
             {NUMERO_RECENSIONI_MIODOTTORE} recensioni lasciate dai pazienti dopo la visita, con
             una valutazione media di {VALUTAZIONE_MIODOTTORE} su 5.
           </p>
+        }
+        aside={
+          <HeroPhoto
+            src="/foto/valutazione-paziente.webp"
+            alt="Il Dott. Trupiano valuta il braccio di una paziente in studio"
+            caption="In studio con una paziente"
+            position="50% 50%"
+          />
         }
       />
 

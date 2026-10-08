@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Triangolo from "@/components/home/Triangolo";
 import Disturbi from "@/components/home/Disturbi";
+import InStudio from "@/components/home/InStudio";
 import { CONTACT_INFO, MIODOTTORE_URL, WHATSAPP_URL } from "@/lib/constants";
 import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
 import {
@@ -173,6 +174,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <InStudio />
 
       {/* RECENSIONI */}
       <section className="mx-auto max-w-[1320px] px-6 py-28 lg:px-10">
