@@ -17,7 +17,7 @@ export const NAV_LINKS = [
   { label: "Come lavoro", href: "/come-lavoro" },
   { label: "Trattamenti", href: "/trattamenti" },
   { label: "Prima visita", href: "/prima-visita" },
-  { label: "Domande", href: "/domande-frequenti" },
+  { label: "FAQ", href: "/domande-frequenti" },
   { label: "Recensioni", href: "/recensioni" },
   { label: "Contatti", href: "/contatti" },
 ] as const;
