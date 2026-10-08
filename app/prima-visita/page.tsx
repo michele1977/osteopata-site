@@ -69,10 +69,10 @@ export default function PrimaVisitaPage() {
         <ol className="mt-14 grid gap-px overflow-hidden rounded-3xl bg-line md:grid-cols-2 lg:grid-cols-4">
           {fasi.map((fase, i) => (
             <li key={fase.titolo} className="bg-paper p-8">
-              <span className="font-display text-5xl font-light text-tufo">
+              <span className="font-display text-3xl font-light text-tufo">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <h3 className="mt-8 font-display text-2xl font-light">{fase.titolo}</h3>
+              <h3 className="mt-6 font-display text-2xl font-light">{fase.titolo}</h3>
               <p className="mt-4 text-[15px] leading-relaxed text-ink/80">{fase.descrizione}</p>
             </li>
           ))}
