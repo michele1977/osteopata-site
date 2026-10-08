@@ -3,6 +3,7 @@ import Link from "next/link";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import PageHero from "@/components/ui/PageHero";
+import HeroPhoto from "@/components/ui/HeroPhoto";
 import CallBand from "@/components/ui/CallBand";
 
 export const metadata: Metadata = {
@@ -155,6 +156,14 @@ export default function TrattamentiPage() {
               e della tua storia.
             </p>
           </>
+        }
+        aside={
+          <HeroPhoto
+            src="/foto/trattamento-arto-inferiore.webp"
+            alt="Il Dott. Trupiano mobilizza la gamba di un paziente disteso sul lettino"
+            caption="Durante un trattamento"
+            position="55% 40%"
+          />
         }
       />
 

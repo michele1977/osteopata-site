@@ -3,6 +3,7 @@ import Link from "next/link";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import PageHero from "@/components/ui/PageHero";
+import HeroPhoto from "@/components/ui/HeroPhoto";
 import CallBand from "@/components/ui/CallBand";
 
 export const metadata: Metadata = {
@@ -70,6 +71,14 @@ export default function ComeLavoroPage() {
             dell&apos;apparato muscolo-scheletrico. Qui ti spiego i principi che guidano ogni
             trattamento nei miei studi di Napoli e Pozzuoli.
           </p>
+        }
+        aside={
+          <HeroPhoto
+            src="/foto/trattamento-schiena.webp"
+            alt="Il Dott. Trupiano lavora sulla schiena di un paziente disteso sul lettino"
+            caption="In studio"
+            position="60% 40%"
+          />
         }
       />
 

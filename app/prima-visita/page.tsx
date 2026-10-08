@@ -3,6 +3,7 @@ import Link from "next/link";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import PageHero from "@/components/ui/PageHero";
+import HeroPhoto from "@/components/ui/HeroPhoto";
 import CallBand from "@/components/ui/CallBand";
 
 export const metadata: Metadata = {
@@ -58,6 +59,13 @@ export default function PrimaVisitaPage() {
             lavorare insieme. Nessuna fretta, nessun giudizio. Porta eventuali esami gi&agrave;
             eseguiti, indossa vestiti comodi e lascia a me il resto.
           </p>
+        }
+        aside={
+          <HeroPhoto
+            src="/foto/valutazione-in-studio.webp"
+            alt="Il Dott. Trupiano valuta un paziente disteso sul lettino nello studio"
+            caption="Lo studio"
+          />
         }
       />
 
