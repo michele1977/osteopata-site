@@ -4,7 +4,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import CookieBanner from "@/components/ui/CookieBanner";
-import { SITE_NAME, SITE_DESCRIPTION, SITE_URL } from "@/lib/constants";
+import { INDEXABLE, SITE_NAME, SITE_DESCRIPTION, SITE_URL } from "@/lib/constants";
 
 const instrument = Instrument_Sans({
   variable: "--font-instrument",
@@ -25,6 +25,7 @@ export const metadata: Metadata = {
   },
   description: SITE_DESCRIPTION,
   metadataBase: new URL(SITE_URL),
+  robots: INDEXABLE ? undefined : { index: false, follow: false },
   openGraph: {
     type: "website",
     locale: "it_IT",

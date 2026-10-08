@@ -6,6 +6,10 @@ export const SITE_DESCRIPTION =
 export const SITE_URL = process.env.VERCEL_PROJECT_PRODUCTION_URL
   ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
   : "http://localhost:3000";
+// Google indicizza il sito solo quando è collegato un dominio proprio.
+export const INDEXABLE =
+  !!process.env.VERCEL_PROJECT_PRODUCTION_URL &&
+  !process.env.VERCEL_PROJECT_PRODUCTION_URL.endsWith(".vercel.app");
 
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
