@@ -35,7 +35,7 @@ export default function CookieBanner() {
           <button
             type="button"
             onClick={() => setConsent("accepted")}
-            className="flex-1 rounded-lg bg-teal-700 px-5 py-2.5 text-sm font-semibold text-white shadow-md transition-colors hover:bg-teal-800 sm:flex-none"
+            className="flex-1 rounded-lg px-5 py-2.5 text-sm font-semibold text-teal-700 ring-1 ring-teal-700 transition-colors hover:bg-teal-50 sm:flex-none"
           >
             Accetta
           </button>

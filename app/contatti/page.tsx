@@ -24,8 +24,8 @@ export default function ContattiPage() {
               Contatta lo studio
             </h1>
             <p className="mt-5 text-lg leading-relaxed text-zinc-500">
-              Puoi contattarmi per informazioni o per fissare un appuntamento: rispondo personalmente al telefono.
-              Rispondo personalmente a ogni richiesta.
+              Puoi contattarmi per informazioni o per fissare un appuntamento:
+              rispondo personalmente al telefono.
             </p>
           </div>
 

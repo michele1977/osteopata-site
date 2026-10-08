@@ -14,6 +14,8 @@ export const metadata: Metadata = {
 
 const tel = `tel:${CONTACT_INFO.phone.replace(/\s/g, "")}`;
 const phoneShort = CONTACT_INFO.phone.replace(/^\+39\s*/, "");
+// Anni dal diploma D.O. (2013), ricalcolati a ogni build.
+const anniPratica = new Date().getFullYear() - 2013;
 
 const training = [
   ["2013", "Diploma D.O. — A.T. Still Academy (ATSAI), 6 anni"],
@@ -117,7 +119,7 @@ export default function HomePage() {
               </figcaption>
             </figure>
             <div className="absolute -left-6 bottom-20 rounded-2xl bg-paper p-5 shadow-[0_20px_50px_-20px_rgba(19,32,30,0.35)]">
-              <div className="font-display text-4xl">13</div>
+              <div className="font-display text-4xl">{anniPratica}</div>
               <div className="text-[11px] font-medium uppercase tracking-widest text-stone">anni di pratica clinica</div>
             </div>
           </div>

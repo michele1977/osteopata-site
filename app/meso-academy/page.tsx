@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
+import { CONTACT_INFO } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "M.E.S.O Academy \u2013 Formazione osteopatica a Napoli",
@@ -159,10 +160,10 @@ export default function MesoAcademyPage() {
             <li>
               <span className="font-medium text-zinc-900">Telefono:</span>{" "}
               <a
-                href="tel:+393389837411"
+                href={`tel:${CONTACT_INFO.phone.replace(/\s/g, "")}`}
                 className="text-teal-700 underline underline-offset-2 hover:text-teal-800"
               >
-                +39 338 983 7411
+                {CONTACT_INFO.phone}
               </a>
             </li>
           </ul>

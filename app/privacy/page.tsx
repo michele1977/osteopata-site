@@ -32,7 +32,7 @@ export default function PrivacyPage() {
         <li>
           <strong>Dati che ci invii tu</strong>: nome, numero di telefono e
           il testo del messaggio inviato con il modulo contatti, oppure i
-          dati che ci comunichi via telefono, WhatsApp o email.
+          dati che ci comunichi via telefono o email.
         </li>
         <li>
           <strong>Dati sulla salute</strong>: se nel messaggio descrivi

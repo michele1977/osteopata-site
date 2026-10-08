@@ -47,7 +47,7 @@ export default function CookiePolicyPage() {
           .
         </li>
         <li>
-          <strong>WhatsApp, Instagram, Facebook e MioDottore</strong>: il
+          <strong>Instagram, Facebook e MioDottore</strong>: il
           sito contiene solo link a questi servizi, che non installano
           cookie finch&eacute; non li apri. Una volta sul loro sito valgono
           le loro informative.

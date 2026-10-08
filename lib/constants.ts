@@ -13,11 +13,10 @@ export const NAV_LINKS = [
 ] as const;
 
 export const CONTACT_INFO = {
-  phone: "+39 338 983 7411",
+  phone: "+39 366 463 3858",
   email: "info@trupianoosteopata.it",
   address: "Via Mergellina 220, Napoli",
   addressPozzuoli: "Via Montenuovo Licola Patria 138, Pozzuoli (NA)",
-  whatsapp: "https://wa.me/393389837411",
 } as const;
 
 export const SOCIAL_LINKS = {
